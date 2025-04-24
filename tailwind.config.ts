@@ -22,6 +22,7 @@ export default {
       colors: {
         border: "#8E9196", // Adding border color for border-border class
         background: "#1A1F2C",
+        foreground: "hsl(var(--foreground))", // Add this line
         accent: "#8B5CF6",
         "accent-soft": "#E5DEFF",
         muted: "#8E9196",
