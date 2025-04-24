@@ -1,20 +1,21 @@
 
-import { Code, Gamepad, Github, Linkedin, Mail } from "lucide-react";
+import { Code, Gamepad, Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-accent/20">
       <div className="container flex items-center justify-between h-16">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <Gamepad className="h-6 w-6 text-accent" />
           <span className="font-bold text-white">GameDev Portfolio</span>
-        </div>
+        </Link>
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#projects" className="text-white hover:text-accent transition-colors">Projects</a>
-          <a href="#skills" className="text-white hover:text-accent transition-colors">Skills</a>
-          <a href="#about" className="text-white hover:text-accent transition-colors">About</a>
-          <a href="#contact" className="text-white hover:text-accent transition-colors">Contact</a>
+          <Link to="/projects" className="text-white hover:text-accent transition-colors">Projects</Link>
+          <Link to="/skills" className="text-white hover:text-accent transition-colors">Skills</Link>
+          <Link to="/about" className="text-white hover:text-accent transition-colors">About</Link>
+          <Link to="/contact" className="text-white hover:text-accent transition-colors">Contact</Link>
         </nav>
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild>
