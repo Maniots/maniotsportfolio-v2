@@ -20,6 +20,7 @@ export default {
     },
     extend: {
       colors: {
+        border: "#8E9196", // Adding border color for border-border class
         background: "#1A1F2C",
         accent: "#8B5CF6",
         "accent-soft": "#E5DEFF",
