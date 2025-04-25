@@ -1,11 +1,17 @@
-
 import Header from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   const projects = [
     {
       title: "2D Platformer Game",
@@ -38,15 +44,25 @@ const Projects = () => {
       <Header />
       <main className="container px-4 py-20">
         <h1 className="text-4xl font-bold mb-12 animate-fade-in">Projects</h1>
-        <div className="grid md:grid-cols-2 gap-6 animate-fade-in">
-          {projects.map((project) => (
-            <Card key={project.title} className="bg-background border-accent/20 hover:border-accent/40 transition-colors">
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project, index) => (
+            <Card 
+              key={project.title} 
+              className="bg-background border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20"
+              style={{
+                opacity: isVisible ? 1 : 0,
+                transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+                transition: `all 0.5s ease-out ${index * 0.2}s`,
+              }}
+            >
               <CardHeader>
-                <div className="aspect-video w-full overflow-hidden rounded-lg mb-4">
+                <div 
+                  className="aspect-video w-full overflow-hidden rounded-lg mb-4 transform transition-transform duration-300 hover:scale-105"
+                >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
                 <CardTitle className="text-white">{project.title}</CardTitle>
@@ -58,20 +74,30 @@ const Projects = () => {
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="bg-accent/10 text-accent hover:bg-accent/20"
+                      className="bg-accent/10 text-accent hover:bg-accent/20 transition-colors duration-300"
                     >
                       {tag}
                     </Badge>
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <Button variant="outline" size="sm" className="gap-2" asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
+                    asChild
+                  >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="w-4 h-4" />
                       Code
                     </a>
                   </Button>
-                  <Button variant="outline" size="sm" className="gap-2" asChild>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
+                    asChild
+                  >
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <Globe className="w-4 h-4" />
                       Demo
