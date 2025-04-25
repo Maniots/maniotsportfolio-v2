@@ -12,10 +12,23 @@ const Header = () => {
           <span className="font-bold text-white">GameDev Portfolio</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6">
-          <Link to="/projects" className="text-white hover:text-accent transition-colors">Projects</Link>
-          <Link to="/skills" className="text-white hover:text-accent transition-colors">Skills</Link>
-          <Link to="/about" className="text-white hover:text-accent transition-colors">About</Link>
-          <Link to="/contact" className="text-white hover:text-accent transition-colors">Contact</Link>
+          {[
+            { to: "/projects", label: "Projects" },
+            { to: "/skills", label: "Skills" },
+            { to: "/about", label: "About" },
+            { to: "/contact", label: "Contact" }
+          ].map(({ to, label }) => (
+            <Link 
+              key={to} 
+              to={to} 
+              className="text-white relative group"
+            >
+              <span className="relative">
+                {label}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              </span>
+            </Link>
+          ))}
         </nav>
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild>
