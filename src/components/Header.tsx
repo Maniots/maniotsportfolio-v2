@@ -2,6 +2,7 @@
 import { Code, Gamepad, Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
@@ -11,6 +12,8 @@ const Header = () => {
           <Gamepad className="h-6 w-6 text-accent" />
           <span className="font-bold text-white">GameDev Portfolio</span>
         </Link>
+        
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
           {[
             { to: "/projects", label: "Projects" },
@@ -30,7 +33,12 @@ const Header = () => {
             </Link>
           ))}
         </nav>
+
         <div className="flex items-center gap-4">
+          {/* Mobile Navigation */}
+          <MobileNav />
+          
+          {/* Social Links */}
           <Button variant="ghost" size="icon" asChild>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
