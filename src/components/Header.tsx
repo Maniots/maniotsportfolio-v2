@@ -1,20 +1,16 @@
-
-import { Code, Gamepad, Github, Linkedin } from "lucide-react";
+import { Gamepad, Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
-import { useTextAnimation } from "@/hooks/useTextAnimation";
 
 const Header = () => {
-  const displayName = useTextAnimation(["Manuel Rizzo", "Maniots"], 3000);
-  
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-accent/20">
       <div className="container flex items-center justify-between h-16">
         <Link to="/" className="flex items-center gap-2">
           <Gamepad className="h-6 w-6 text-accent" />
-          <span className="font-bold text-white transition-all duration-500">
-            {displayName} Portfolio
+          <span className="font-bold text-white">
+            Manuel Rizzo Portfolio
           </span>
         </Link>
         

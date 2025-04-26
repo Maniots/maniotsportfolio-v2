@@ -1,6 +1,7 @@
+
 import Header from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Database, Figma, FileCode, Github } from "lucide-react";
+import { Code, Database, FileCode, Gamepad, Github, Server } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { useEffect, useState } from "react";
 
@@ -15,28 +16,42 @@ const Skills = () => {
     {
       category: "Game Development",
       items: [
-        { name: "Unity", icon: <Code className="w-6 h-6 text-accent" />, level: 90 },
-        { name: "C#", icon: <FileCode className="w-6 h-6 text-accent" />, level: 85 },
-        { name: "Game Design", icon: <Figma className="w-6 h-6 text-accent" />, level: 75 },
-        { name: "Level Design", icon: <Code className="w-6 h-6 text-accent" />, level: 80 },
+        { icon: <FileCode className="w-6 h-6 text-accent" />, name: "C#", level: 90 },
+        { icon: <Gamepad className="w-6 h-6 text-accent" />, name: "Unity", level: 85 },
       ],
     },
     {
-      category: "Programming",
+      category: "Web Technologies",
       items: [
-        { name: "Java", icon: <Code className="w-6 h-6 text-accent" />, level: 85 },
-        { name: "Python", icon: <Code className="w-6 h-6 text-accent" />, level: 80 },
-        { name: "JavaScript", icon: <FileCode className="w-6 h-6 text-accent" />, level: 90 },
-        { name: "TypeScript", icon: <FileCode className="w-6 h-6 text-accent" />, level: 85 },
+        { icon: <Code className="w-6 h-6 text-accent" />, name: "HTML", level: 85 },
+        { icon: <Code className="w-6 h-6 text-accent" />, name: "CSS", level: 80 },
+        { icon: <Code className="w-6 h-6 text-accent" />, name: "JavaScript", level: 85 },
+        { icon: <Server className="w-6 h-6 text-accent" />, name: "Node.js", level: 80 },
       ],
     },
     {
-      category: "Tools & Software",
+      category: "Tools & Technologies",
       items: [
-        { name: "Git", icon: <Github className="w-6 h-6 text-accent" />, level: 90 },
-        { name: "Visual Studio", icon: <Code className="w-6 h-6 text-accent" />, level: 85 },
-        { name: "Blender", icon: <Database className="w-6 h-6 text-accent" />, level: 70 },
-        { name: "Adobe Creative Suite", icon: <Figma className="w-6 h-6 text-accent" />, level: 75 },
+        { icon: <Github className="w-6 h-6 text-accent" />, name: "Git", level: 85 },
+        { icon: <Github className="w-6 h-6 text-accent" />, name: "GitHub", level: 85 },
+        { icon: <Server className="w-6 h-6 text-accent" />, name: "Docker", level: 75 },
+        { icon: <Code className="w-6 h-6 text-accent" />, name: "Linux", level: 80 },
+        { icon: <Server className="w-6 h-6 text-accent" />, name: "AWS", level: 70 },
+      ],
+    },
+    {
+      category: "Databases",
+      items: [
+        { icon: <Database className="w-6 h-6 text-accent" />, name: "PostgreSQL", level: 80 },
+        { icon: <Database className="w-6 h-6 text-accent" />, name: "MongoDB", level: 75 },
+      ],
+    },
+    {
+      category: "Programming Languages & Frameworks",
+      items: [
+        { icon: <Code className="w-6 h-6 text-accent" />, name: "Python", level: 80 },
+        { icon: <Code className="w-6 h-6 text-accent" />, name: "MAUI", level: 75 },
+        { icon: <Code className="w-6 h-6 text-accent" />, name: ".NET", level: 85 },
       ],
     },
   ];
