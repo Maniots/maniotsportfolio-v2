@@ -24,7 +24,7 @@ const MobileNav = () => {
             <Link 
               key={to} 
               to={to} 
-              className="text-foreground px-4 py-2 rounded-md hover:bg-accent/10 transition-colors"
+              className="text-accent px-4 py-2 rounded-md hover:bg-accent/10 transition-colors"
             >
               {label}
             </Link>
