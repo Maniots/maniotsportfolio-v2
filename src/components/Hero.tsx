@@ -11,10 +11,10 @@ const Hero = () => {
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block w-[300px] text-left">
+            <span className="inline-block w-[400px] text-left">
               <span
-                className={`inline-block transition-all duration-[1500ms] ease-in-out ${
-                  isTransitioning ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'
+                className={`inline-block transition-all duration-[1500ms] ease-out ${
+                  isTransitioning ? 'opacity-0 translate-y-[50px]' : 'opacity-100 translate-y-0'
                 }`}
               >
                 {displayText}
