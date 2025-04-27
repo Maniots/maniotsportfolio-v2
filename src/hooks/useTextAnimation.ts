@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-export const useTextAnimation = (texts: string[], interval: number = 3000) => {
+export const useTextAnimation = (texts: string[], interval: number = 5000) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [displayText, setDisplayText] = useState(texts[0]);
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -13,7 +13,7 @@ export const useTextAnimation = (texts: string[], interval: number = 3000) => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setIsTransitioning(false);
-      }, 1500); // Match the duration-[1500ms] in the CSS
+      }, 2000); // Match the duration-[2000ms] in the CSS
     }, interval);
 
     return () => clearInterval(timer);
