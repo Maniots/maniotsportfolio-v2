@@ -8,13 +8,18 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-background to-background/90">
       <div className="container px-4 py-16 flex flex-col items-center text-center animate-fade-in">
-        <div className="mb-8 overflow-hidden">
-          <h1 
-            className={`text-5xl md:text-7xl font-bold text-white mb-2 transition-all duration-1000 ease-in-out ${
-              isTransitioning ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'
-            }`}
-          >
-            Hi, {displayText}
+        <div className="mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
+            Hi, I'm{" "}
+            <span className="inline-block overflow-hidden">
+              <span
+                className={`inline-block transition-all duration-[1500ms] ease-in-out ${
+                  isTransitioning ? 'opacity-0 translate-y-full' : 'opacity-100 translate-y-0'
+                }`}
+              >
+                {displayText}
+              </span>
+            </span>
           </h1>
         </div>
         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
