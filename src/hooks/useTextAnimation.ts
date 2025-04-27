@@ -9,10 +9,11 @@ export const useTextAnimation = (texts: string[], interval: number = 3000) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setIsTransitioning(true);
+      
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
         setIsTransitioning(false);
-      }, 500); // Half of the transition duration
+      }, 1000); // Match the duration-1000 in the CSS
     }, interval);
 
     return () => clearInterval(timer);
