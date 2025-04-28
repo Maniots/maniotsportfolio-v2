@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block w-[400px] relative overflow-hidden h-[80px]">
+            <span className="inline-block relative overflow-hidden" style={{ minWidth: '450px', height: '80px', textAlign: 'left' }}>
               {/* Current text that fades out */}
               <span
                 className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
