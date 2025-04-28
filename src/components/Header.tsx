@@ -1,3 +1,4 @@
+
 import { Gamepad, Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
@@ -39,14 +40,14 @@ const Header = () => {
           {/* Mobile Navigation */}
           <MobileNav />
           
-          {/* Social Links */}
+          {/* Social Links with updated URLs */}
           <Button variant="ghost" size="icon" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Maniots" target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
             </a>
           </Button>
           <Button variant="ghost" size="icon" asChild>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/manuel-rizzo/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="h-5 w-5" />
             </a>
           </Button>

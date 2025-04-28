@@ -3,7 +3,7 @@ import { useTextAnimation } from "@/hooks/useTextAnimation";
 import { Button } from "./ui/button";
 
 const Hero = () => {
-  const { displayText, isTransitioning } = useTextAnimation(["Manuel Rizzo", "Maniots"], 5000);
+  const { displayText, nextText, isTransitioning } = useTextAnimation(["Manuel Rizzo", "Maniots"], 5000);
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-background to-background/90">
@@ -11,13 +11,23 @@ const Hero = () => {
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block w-[400px]">
+            <span className="inline-block w-[400px] relative overflow-hidden h-[80px]">
+              {/* Current text that fades out and moves up */}
               <span
-                className={`inline-block whitespace-nowrap transition-all duration-[2000ms] ease-out ${
-                  isTransitioning ? 'opacity-0 translate-y-[50px]' : 'opacity-100 translate-y-0'
+                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-out ${
+                  isTransitioning ? 'opacity-0 -translate-y-[80px]' : 'opacity-100 translate-y-0'
                 }`}
               >
                 {displayText}
+              </span>
+              
+              {/* Next text that moves in from bottom */}
+              <span
+                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-out ${
+                  isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[80px]'
+                }`}
+              >
+                {nextText}
               </span>
             </span>
           </h1>
