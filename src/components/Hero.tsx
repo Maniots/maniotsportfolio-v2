@@ -11,10 +11,10 @@ const Hero = () => {
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block relative overflow-hidden" style={{ minWidth: '450px', height: '80px', textAlign: 'left' }}>
+            <span className="inline-block relative overflow-hidden" style={{ minWidth: '500px', height: '80px', display: 'inline-flex', alignItems: 'baseline' }}>
               {/* Current text that fades out */}
               <span
-                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
+                className={`absolute left-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
                   isTransitioning ? 'opacity-0 -translate-y-6' : 'opacity-100 translate-y-0'
                 }`}
               >
@@ -23,7 +23,7 @@ const Hero = () => {
               
               {/* Next text that fades in */}
               <span
-                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
+                className={`absolute left-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
                   isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}
               >
