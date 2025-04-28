@@ -12,19 +12,19 @@ const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
             <span className="inline-block w-[400px] relative overflow-hidden h-[80px]">
-              {/* Current text that fades out and moves up */}
+              {/* Current text that fades out */}
               <span
-                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-out ${
-                  isTransitioning ? 'opacity-0 -translate-y-[80px]' : 'opacity-100 translate-y-0'
+                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
+                  isTransitioning ? 'opacity-0 -translate-y-6' : 'opacity-100 translate-y-0'
                 }`}
               >
                 {displayText}
               </span>
               
-              {/* Next text that moves in from bottom */}
+              {/* Next text that fades in */}
               <span
-                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-out ${
-                  isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[80px]'
+                className={`absolute left-0 right-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
+                  isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}
               >
                 {nextText}

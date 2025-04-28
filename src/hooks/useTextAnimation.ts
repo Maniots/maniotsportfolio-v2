@@ -17,7 +17,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
         setCurrentIndex(newIndex);
         setNextIndex((newIndex + 1) % texts.length);
         setIsTransitioning(false);
-      }, 2000); // Match the duration-[2000ms] in the CSS
+      }, 2000); // Match the transition duration
     }, interval);
 
     return () => clearInterval(timer);
