@@ -1,32 +1,43 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export const useTextAnimation = (texts: string[], interval: number = 5000) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState((currentIndex + 1) % texts.length);
   const [displayText, setDisplayText] = useState(texts[0]);
-  const [nextText, setNextText] = useState(texts[1]);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const timeoutRef = useRef<number | null>(null);
+  const intervalRef = useRef<number | null>(null);
+
+  // Cleanup function to clear any existing timeouts/intervals
+  const cleanup = () => {
+    if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+    if (intervalRef.current) window.clearInterval(intervalRef.current);
+  };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIsTransitioning(true);
-      
-      setTimeout(() => {
-        const newIndex = (currentIndex + 1) % texts.length;
-        setCurrentIndex(newIndex);
-        setNextIndex((newIndex + 1) % texts.length);
-        setIsTransitioning(false);
-      }, 2000); // Match the transition duration
-    }, interval);
+    // Set initial text
+    setDisplayText(texts[0]);
+    
+    // Start the animation cycle
+    const startAnimation = () => {
+      intervalRef.current = window.setInterval(() => {
+        setIsTransitioning(true);
+        
+        // After the fade-out completes, change the text and start fade-in
+        timeoutRef.current = window.setTimeout(() => {
+          const nextIndex = (currentIndex + 1) % texts.length;
+          setCurrentIndex(nextIndex);
+          setDisplayText(texts[nextIndex]);
+          setIsTransitioning(false);
+        }, 1000); // This should match the duration in the Hero component
+      }, interval);
+    };
+    
+    startAnimation();
+    
+    // Cleanup on unmount
+    return cleanup;
+  }, [currentIndex, interval, texts]);
 
-    return () => clearInterval(timer);
-  }, [interval, texts.length, currentIndex]);
-
-  useEffect(() => {
-    setDisplayText(texts[currentIndex]);
-    setNextText(texts[nextIndex]);
-  }, [currentIndex, nextIndex, texts]);
-
-  return { displayText, nextText, isTransitioning };
+  return { displayText, isTransitioning };
 };

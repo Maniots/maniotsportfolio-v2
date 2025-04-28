@@ -3,7 +3,7 @@ import { useTextAnimation } from "@/hooks/useTextAnimation";
 import { Button } from "./ui/button";
 
 const Hero = () => {
-  const { displayText, nextText, isTransitioning } = useTextAnimation(["Manuel Rizzo", "Maniots"], 5000);
+  const { displayText, isTransitioning } = useTextAnimation(["Manuel Rizzo", "Maniots"], 5000);
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-background to-background/90">
@@ -11,23 +11,13 @@ const Hero = () => {
         <div className="mb-8">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block relative overflow-hidden" style={{ minWidth: '500px', height: '80px', display: 'inline-flex', alignItems: 'baseline' }}>
-              {/* Current text that fades out */}
+            <span className="relative inline-block" style={{ minWidth: '320px', display: 'inline-block', verticalAlign: 'bottom' }}>
               <span
-                className={`absolute left-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
-                  isTransitioning ? 'opacity-0 -translate-y-6' : 'opacity-100 translate-y-0'
+                className={`absolute left-0 transition-all duration-1000 ease-in-out ${
+                  isTransitioning ? 'opacity-0 transform -translate-y-4' : 'opacity-100 transform translate-y-0'
                 }`}
               >
                 {displayText}
-              </span>
-              
-              {/* Next text that fades in */}
-              <span
-                className={`absolute left-0 whitespace-nowrap transition-all duration-[2000ms] ease-in-out ${
-                  isTransitioning ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-                }`}
-              >
-                {nextText}
               </span>
             </span>
           </h1>
