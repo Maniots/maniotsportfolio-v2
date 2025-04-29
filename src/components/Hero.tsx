@@ -11,7 +11,7 @@ const Hero = () => {
         <div className="mb-8 w-full">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block relative overflow-hidden" style={{ minWidth: '300px', display: 'inline-block', verticalAlign: 'bottom' }}>
+            <span className="inline-block relative" style={{ minWidth: '340px', display: 'inline-block', verticalAlign: 'bottom', height: '80px' }}>
               <span
                 className={`block transition-all duration-1000 ease-in-out ${
                   isTransitioning ? 'opacity-0 transform -translate-y-4' : 'opacity-100 transform translate-y-0'

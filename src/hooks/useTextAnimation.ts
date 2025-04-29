@@ -40,7 +40,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
     
     // Cleanup on unmount
     return cleanup;
-  }, [currentIndex, interval, texts]);
+  }, [texts, interval]); // Remove currentIndex from the dependency array
 
   return { displayText, isTransitioning };
 };
