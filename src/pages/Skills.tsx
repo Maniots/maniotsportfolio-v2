@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useEffect, useState } from "react";
 import * as SimpleIcons from 'simple-icons';
+import { LucideCode, Code2, Database, ServerCrash, Globe, Cpu } from "lucide-react";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,20 +13,42 @@ const Skills = () => {
     setIsVisible(true);
   }, []);
 
-  // Function to render icons from Simple Icons
-  const renderIcon = (iconName: string) => {
-    const icon = (SimpleIcons as any)[`si${iconName}`];
+  // Improved function to render icons from Simple Icons with fallback
+  const renderIcon = (iconName: string, displayName: string) => {
+    // Try to get the icon from Simple Icons
+    const formattedIconName = `si${iconName}`;
+    const icon = (SimpleIcons as any)[formattedIconName];
     
-    if (!icon) return null;
+    if (icon) {
+      return (
+        <div 
+          className="w-6 h-6 text-accent" 
+          dangerouslySetInnerHTML={{ 
+            __html: icon.svg.replace(/^<svg /, '<svg fill="currentColor" ') 
+          }}
+        />
+      );
+    }
     
-    return (
-      <div 
-        className="w-6 h-6 text-accent" 
-        dangerouslySetInnerHTML={{ 
-          __html: icon.svg.replace(/^<svg /, '<svg fill="currentColor" ') 
-        }}
-      />
-    );
+    // Fallback to Lucide icons based on category
+    const getFallbackIcon = () => {
+      switch (true) {
+        case /Game|Unity|C#|Sharp/.test(displayName):
+          return <Code2 className="w-6 h-6 text-accent" />;
+        case /HTML|CSS|JavaScript|Web|Node/.test(displayName):
+          return <Globe className="w-6 h-6 text-accent" />;
+        case /SQL|Mongo|Postgres|Database/.test(displayName):
+          return <Database className="w-6 h-6 text-accent" />;
+        case /Docker|AWS|Linux|Git/.test(displayName):
+          return <ServerCrash className="w-6 h-6 text-accent" />;
+        case /Python|NET|MAUI|Language/.test(displayName):
+          return <LucideCode className="w-6 h-6 text-accent" />;
+        default:
+          return <Cpu className="w-6 h-6 text-accent" />;
+      }
+    };
+    
+    return getFallbackIcon();
   };
 
   const skills = [
@@ -39,10 +62,10 @@ const Skills = () => {
     {
       category: "Web Technologies",
       items: [
-        { icon: "HTML5", name: "HTML", level: 85 },
-        { icon: "CSS3", name: "CSS", level: 80 },
-        { icon: "JavaScript", name: "JavaScript", level: 85 },
-        { icon: "NodeDotJs", name: "Node.js", level: 80 },
+        { icon: "Html5", name: "HTML", level: 85 },
+        { icon: "Css3", name: "CSS", level: 80 },
+        { icon: "Javascript", name: "JavaScript", level: 85 },
+        { icon: "Nodedotjs", name: "Node.js", level: 80 },
       ],
     },
     {
@@ -52,22 +75,22 @@ const Skills = () => {
         { icon: "Github", name: "GitHub", level: 85 },
         { icon: "Docker", name: "Docker", level: 75 },
         { icon: "Linux", name: "Linux", level: 80 },
-        { icon: "AmazonAWS", name: "AWS", level: 70 },
+        { icon: "Amazonaws", name: "AWS", level: 70 },
       ],
     },
     {
       category: "Databases",
       items: [
-        { icon: "PostgreSQL", name: "PostgreSQL", level: 80 },
-        { icon: "MongoDB", name: "MongoDB", level: 75 },
+        { icon: "Postgresql", name: "PostgreSQL", level: 80 },
+        { icon: "Mongodb", name: "MongoDB", level: 75 },
       ],
     },
     {
       category: "Programming Languages & Frameworks",
       items: [
         { icon: "Python", name: "Python", level: 80 },
-        { icon: "DotNet", name: "MAUI", level: 75 },
-        { icon: "DotNet", name: ".NET", level: 85 },
+        { icon: "Dotnet", name: "MAUI", level: 75 },
+        { icon: "Dotnet", name: "NET", level: 85 },
       ],
     },
   ];
@@ -104,7 +127,7 @@ const Skills = () => {
                       }}
                     >
                       <div className="flex items-center gap-2 mb-2">
-                        {renderIcon(skill.icon)}
+                        {renderIcon(skill.icon, skill.name)}
                         <span className="text-sm font-medium">{skill.name}</span>
                         <span className="text-xs text-accent ml-auto">{skill.level}%</span>
                       </div>
