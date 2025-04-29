@@ -5,13 +5,44 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+import { toast } from "@/components/ui/sonner";
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Prepare the mailto URL with form data
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoUrl = `mailto:manuelrizzo2006@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open the mail client
+    window.location.href = mailtoUrl;
+    
+    // Show success toast
+    toast.success("Opening your email client", {
+      description: "Thanks for reaching out!"
+    });
+    
+    // Reset form after a short delay
+    setTimeout(() => {
+      setName('');
+      setEmail('');
+      setMessage('');
+      setIsSubmitting(false);
+    }, 500);
+  };
 
   return (
     <div className="min-h-screen bg-background text-white">
@@ -29,7 +60,7 @@ const Contact = () => {
             <Mail className="h-6 w-6 text-accent animate-bounce" />
             <h1 className="text-4xl font-bold">Get in Touch</h1>
           </div>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div 
               className="space-y-2"
               style={{
@@ -43,6 +74,9 @@ const Contact = () => {
                 id="name"
                 placeholder="Your name"
                 className="bg-background border-accent/20 transition-all duration-300 focus:border-accent hover:border-accent/40"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
               />
             </div>
             <div 
@@ -59,6 +93,9 @@ const Contact = () => {
                 type="email"
                 placeholder="your.email@example.com"
                 className="bg-background border-accent/20 transition-all duration-300 focus:border-accent hover:border-accent/40"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
             <div 
@@ -75,17 +112,22 @@ const Contact = () => {
                 rows={5}
                 className="w-full rounded-md bg-background border border-accent/20 p-3 text-white transition-all duration-300 focus:border-accent hover:border-accent/40"
                 placeholder="Your message here..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
               />
             </div>
             <Button 
+              type="submit"
               className="w-full transition-all duration-300 hover:scale-105 hover:bg-accent/90"
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
                 transition: 'all 0.5s ease-out 0.5s',
               }}
+              disabled={isSubmitting}
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </form>
         </div>

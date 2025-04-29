@@ -8,10 +8,10 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-background to-background/90">
       <div className="container px-4 py-16 flex flex-col items-center text-center animate-fade-in">
-        <div className="mb-8">
+        <div className="mb-8 w-full">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="relative inline-block" style={{ minWidth: '320px', display: 'inline-block', verticalAlign: 'bottom' }}>
+            <span className="relative inline-block w-full md:w-auto overflow-hidden" style={{ minWidth: '250px', maxWidth: '100%', display: 'inline-block', verticalAlign: 'bottom' }}>
               <span
                 className={`absolute left-0 transition-all duration-1000 ease-in-out ${
                   isTransitioning ? 'opacity-0 transform -translate-y-4' : 'opacity-100 transform translate-y-0'
