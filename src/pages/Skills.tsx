@@ -1,9 +1,9 @@
 
 import Header from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Database, FileCode, Gamepad, Github, Server } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { useEffect, useState } from "react";
+import * as SimpleIcons from 'simple-icons';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,46 +12,62 @@ const Skills = () => {
     setIsVisible(true);
   }, []);
 
+  // Function to render icons from Simple Icons
+  const renderIcon = (iconName: string) => {
+    const icon = (SimpleIcons as any)[`si${iconName}`];
+    
+    if (!icon) return null;
+    
+    return (
+      <div 
+        className="w-6 h-6 text-accent" 
+        dangerouslySetInnerHTML={{ 
+          __html: icon.svg.replace(/^<svg /, '<svg fill="currentColor" ') 
+        }}
+      />
+    );
+  };
+
   const skills = [
     {
       category: "Game Development",
       items: [
-        { icon: <FileCode className="w-6 h-6 text-accent" />, name: "C#", level: 90 },
-        { icon: <Gamepad className="w-6 h-6 text-accent" />, name: "Unity", level: 85 },
+        { icon: "CSharp", name: "C#", level: 90 },
+        { icon: "Unity", name: "Unity", level: 85 },
       ],
     },
     {
       category: "Web Technologies",
       items: [
-        { icon: <Code className="w-6 h-6 text-accent" />, name: "HTML", level: 85 },
-        { icon: <Code className="w-6 h-6 text-accent" />, name: "CSS", level: 80 },
-        { icon: <Code className="w-6 h-6 text-accent" />, name: "JavaScript", level: 85 },
-        { icon: <Server className="w-6 h-6 text-accent" />, name: "Node.js", level: 80 },
+        { icon: "HTML5", name: "HTML", level: 85 },
+        { icon: "CSS3", name: "CSS", level: 80 },
+        { icon: "JavaScript", name: "JavaScript", level: 85 },
+        { icon: "NodeDotJs", name: "Node.js", level: 80 },
       ],
     },
     {
       category: "Tools & Technologies",
       items: [
-        { icon: <Github className="w-6 h-6 text-accent" />, name: "Git", level: 85 },
-        { icon: <Github className="w-6 h-6 text-accent" />, name: "GitHub", level: 85 },
-        { icon: <Server className="w-6 h-6 text-accent" />, name: "Docker", level: 75 },
-        { icon: <Code className="w-6 h-6 text-accent" />, name: "Linux", level: 80 },
-        { icon: <Server className="w-6 h-6 text-accent" />, name: "AWS", level: 70 },
+        { icon: "Git", name: "Git", level: 85 },
+        { icon: "Github", name: "GitHub", level: 85 },
+        { icon: "Docker", name: "Docker", level: 75 },
+        { icon: "Linux", name: "Linux", level: 80 },
+        { icon: "AmazonAWS", name: "AWS", level: 70 },
       ],
     },
     {
       category: "Databases",
       items: [
-        { icon: <Database className="w-6 h-6 text-accent" />, name: "PostgreSQL", level: 80 },
-        { icon: <Database className="w-6 h-6 text-accent" />, name: "MongoDB", level: 75 },
+        { icon: "PostgreSQL", name: "PostgreSQL", level: 80 },
+        { icon: "MongoDB", name: "MongoDB", level: 75 },
       ],
     },
     {
       category: "Programming Languages & Frameworks",
       items: [
-        { icon: <Code className="w-6 h-6 text-accent" />, name: "Python", level: 80 },
-        { icon: <Code className="w-6 h-6 text-accent" />, name: "MAUI", level: 75 },
-        { icon: <Code className="w-6 h-6 text-accent" />, name: ".NET", level: 85 },
+        { icon: "Python", name: "Python", level: 80 },
+        { icon: "DotNet", name: "MAUI", level: 75 },
+        { icon: "DotNet", name: ".NET", level: 85 },
       ],
     },
   ];
@@ -88,7 +104,7 @@ const Skills = () => {
                       }}
                     >
                       <div className="flex items-center gap-2 mb-2">
-                        {skill.icon}
+                        {renderIcon(skill.icon)}
                         <span className="text-sm font-medium">{skill.name}</span>
                         <span className="text-xs text-accent ml-auto">{skill.level}%</span>
                       </div>
