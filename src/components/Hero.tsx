@@ -13,7 +13,7 @@ const Hero = () => {
             Hi, I'm{" "}
             <span className="inline-block relative" style={{ minWidth: '280px', display: 'inline-block', verticalAlign: 'bottom', height: '80px' }}>
               <span
-                className={`block transition-all duration-1000 ease-in-out ${
+                className={`block transition-all ease-in-out ${
                   isTransitioning ? 'opacity-0 transform -translate-y-4' : 'opacity-100 transform translate-y-0'
                 }`}
               >
