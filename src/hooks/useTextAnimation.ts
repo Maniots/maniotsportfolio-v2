@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export const useTextAnimation = (texts: string[], interval: number = 5000) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [displayText, setDisplayText] = useState(texts[0] || '');
+  const [displayText, setDisplayText] = useState(texts[0]);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const timeoutRef = useRef<number | null>(null);
   const intervalRef = useRef<number | null>(null);
@@ -16,7 +16,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
 
   useEffect(() => {
     // Set initial text
-    setDisplayText(texts[0] || '');
+    setDisplayText(texts[0]);
     
     // Start the animation cycle
     const startAnimation = () => {
