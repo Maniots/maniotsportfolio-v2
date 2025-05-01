@@ -28,7 +28,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
         
         // After the fade-out completes, change the text and start fade-in
         timeoutRef.current = window.setTimeout(() => {
-          const nextIndex = (currentIndex + 1) % texts.length;
+          const nextIndex = (currentIndex + 1);
           setCurrentIndex(nextIndex);
           setDisplayText(texts[nextIndex]);
           setIsTransitioning(false);
