@@ -23,9 +23,6 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
       // Only set up interval if we have more than one text to animate between
       if (texts.length <= 1) return;
       
-      // Initial setup - this ensures the animation starts right away
-      setCurrentIndex(0);
-      
       intervalRef.current = window.setInterval(() => {
         setIsTransitioning(true);
         
@@ -43,7 +40,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
     
     // Cleanup on unmount
     return cleanup;
-  }, [texts, interval, currentIndex]); // Add currentIndex back to the dependency array
+  }, [texts, interval]); // Remove currentIndex from dependency array
 
   return { displayText, isTransitioning };
 };

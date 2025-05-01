@@ -55,7 +55,7 @@ const About = () => {
           >
             <h2 className="text-2xl font-semibold mb-4">Quick Facts</h2>
             <ul className="space-y-2">
-              {["Computer Science Student", "Game Development Enthusiast", "Unity & C# Developer", "Problem Solver"].map((fact, index) => (
+              {["Computer Science Student", "Game Development Enthusiast", "Unity & C# Developer", "Problem Solver", "Italian", "Team Player"].map((fact, index) => (
                 <li 
                   key={fact}
                   className="flex items-center gap-2 transform transition-all duration-300 hover:translate-x-2"
