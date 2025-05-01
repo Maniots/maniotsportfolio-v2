@@ -34,7 +34,7 @@ const Hero = () => {
             <a href="#projects">View Projects</a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="#contact">Contact Me</a>
+            <a href="/contact">Contact Me</a>
           </Button>
         </div>
       </div>
