@@ -32,7 +32,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
           setCurrentIndex(nextIndex);
           setDisplayText(texts[nextIndex]);
           setIsTransitioning(false);
-        }); // This should match the duration in the Hero component
+        },1000); // This should match the duration in the Hero component
       }, interval);
     };
     
