@@ -22,10 +22,13 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Prepare the mailto URL with form data
+    // Prepare the mailto URL with form data - improved format for Gmail
     const subject = `Portfolio Contact from ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-    const mailtoUrl = `mailto:manuelrizzo2006@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Format the body with line breaks that Gmail will render properly
+    const body = `Name: ${name}%0D%0A%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message.replace(/\n/g, '%0D%0A')}`;
+    
+    const mailtoUrl = `mailto:manuelrizzo2006@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     
     // Open the mail client
     window.location.href = mailtoUrl;
