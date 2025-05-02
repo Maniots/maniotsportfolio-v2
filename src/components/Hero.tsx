@@ -3,7 +3,7 @@ import { useTextAnimation } from "@/hooks/useTextAnimation";
 import { Button } from "./ui/button";
 
 const Hero = () => {
-  const { displayText, isTransitioning } = useTextAnimation(["Manuel Rizzo", "Maniots"], 3000);
+  const { displayText } = useTextAnimation(["Manuel Rizzo", "Maniots"], 3000);
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-background to-background/90">
@@ -11,15 +11,8 @@ const Hero = () => {
         <div className="mb-8 w-full">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block relative overflow-hidden" style={{ minWidth: '280px', display: 'inline-block', verticalAlign: 'bottom', height: '80px' }}>
-              <span
-                className={`block transition-transform duration-300 ease-in-out ${
-                  isTransitioning ? 'translate-x-[-100%]' : 'translate-x-0'
-                }`}
-                style={{ position: 'absolute', width: '100%' }}
-              >
-                {displayText}
-              </span>
+            <span className="inline-block" style={{ minWidth: '280px' }}>
+              {displayText}
             </span>
           </h1>
         </div>
