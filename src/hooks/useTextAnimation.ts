@@ -26,13 +26,13 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
       intervalRef.current = window.setInterval(() => {
         setIsTransitioning(true);
         
-        // After the fade-out completes, change the text and start fade-in
+        // After the slide-out completes, change the text and start slide-in
         timeoutRef.current = window.setTimeout(() => {
-          const nextIndex = (currentIndex + 1);
+          const nextIndex = (currentIndex + 1) % texts.length;
           setCurrentIndex(nextIndex);
           setDisplayText(texts[nextIndex]);
           setIsTransitioning(false);
-        },1000); // This should match the duration in the Hero component
+        }, 1000); // This should match the duration in the Hero component
       }, interval);
     };
     
@@ -40,7 +40,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
     
     // Cleanup on unmount
     return cleanup;
-  }, [texts, interval]); // Remove currentIndex from dependency array
+  }, [texts, interval, currentIndex]); // Add currentIndex as dependency
 
   return { displayText, isTransitioning };
 };
