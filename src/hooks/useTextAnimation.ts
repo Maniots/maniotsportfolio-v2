@@ -15,24 +15,24 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
   };
 
   useEffect(() => {
-    // Set initial text
-    setDisplayText(texts[0]);
+    // Only set up animation if we have more than one text to animate between
+    if (texts.length <= 1) return;
     
     // Start the animation cycle
     const startAnimation = () => {
-      // Only set up interval if we have more than one text to animate between
-      if (texts.length <= 1) return;
+      // Set initial text
+      setDisplayText(texts[0]);
       
       intervalRef.current = window.setInterval(() => {
         setIsTransitioning(true);
         
-        // After the slide-out completes, change the text and start slide-in
+        // After the slide-out completes, change the text and slide-in
         timeoutRef.current = window.setTimeout(() => {
           const nextIndex = (currentIndex + 1) % texts.length;
           setCurrentIndex(nextIndex);
           setDisplayText(texts[nextIndex]);
           setIsTransitioning(false);
-        }, 1000); // This should match the duration in the Hero component
+        }, 500); // Reduced from 1000ms for faster transition
       }, interval);
     };
     
@@ -40,7 +40,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
     
     // Cleanup on unmount
     return cleanup;
-  }, [texts, interval, currentIndex]); // Add currentIndex as dependency
+  }, [texts, interval, currentIndex]);
 
   return { displayText, isTransitioning };
 };
