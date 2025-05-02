@@ -22,6 +22,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
     const startAnimation = () => {
       // Set initial text
       setDisplayText(texts[0]);
+      setCurrentIndex(0);
       
       intervalRef.current = window.setInterval(() => {
         setIsTransitioning(true);
@@ -32,7 +33,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
           setCurrentIndex(nextIndex);
           setDisplayText(texts[nextIndex]);
           setIsTransitioning(false);
-        }, 500); // Reduced from 1000ms for faster transition
+        }, 300); // Faster transition time
       }, interval);
     };
     
@@ -40,7 +41,7 @@ export const useTextAnimation = (texts: string[], interval: number = 5000) => {
     
     // Cleanup on unmount
     return cleanup;
-  }, [texts, interval, currentIndex]);
+  }, [texts, interval]);
 
   return { displayText, isTransitioning };
 };
