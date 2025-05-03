@@ -1,8 +1,18 @@
 
 import { useState, useEffect } from 'react';
 
+export interface TextAnimationState {
+  displayText: string;
+  isAnimating: boolean;
+  direction: 'left' | 'right';
+}
+
 export const useTextAnimation = (texts: string[], interval: number = 3000) => {
-  const [displayText, setDisplayText] = useState(texts[0]);
+  const [state, setState] = useState<TextAnimationState>({
+    displayText: texts[0],
+    isAnimating: false,
+    direction: 'left'
+  });
   
   useEffect(() => {
     // Only set up animation if we have more than one text to animate between
@@ -10,10 +20,14 @@ export const useTextAnimation = (texts: string[], interval: number = 3000) => {
     
     // Create interval to switch between texts
     const intervalId = setInterval(() => {
-      setDisplayText(prevText => {
-        const currentIndex = texts.indexOf(prevText);
+      setState(prevState => {
+        const currentIndex = texts.indexOf(prevState.displayText);
         const nextIndex = (currentIndex + 1) % texts.length;
-        return texts[nextIndex];
+        return {
+          displayText: texts[nextIndex],
+          isAnimating: true,
+          direction: 'left'
+        };
       });
     }, interval);
     
@@ -21,5 +35,5 @@ export const useTextAnimation = (texts: string[], interval: number = 3000) => {
     return () => clearInterval(intervalId);
   }, [texts, interval]);
 
-  return { displayText };
+  return state;
 };

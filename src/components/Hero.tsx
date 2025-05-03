@@ -1,9 +1,25 @@
 
 import { useTextAnimation } from "@/hooks/useTextAnimation";
 import { Button } from "./ui/button";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
-  const { displayText } = useTextAnimation(["Manuel Rizzo", "Maniots"], 3000);
+  const { displayText, isAnimating, direction } = useTextAnimation(["Manuel Rizzo", "Maniots"], 3000);
+  const [animationClass, setAnimationClass] = useState("opacity-100");
+  
+  useEffect(() => {
+    if (isAnimating) {
+      // Start with slide out animation
+      setAnimationClass("translate-x-[-100%] opacity-0");
+      
+      // After slide out completes, reset position and start slide in
+      const timeout = setTimeout(() => {
+        setAnimationClass("translate-x-0 opacity-100");
+      }, 300);
+      
+      return () => clearTimeout(timeout);
+    }
+  }, [displayText, isAnimating]);
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-b from-background to-background/90">
@@ -11,8 +27,12 @@ const Hero = () => {
         <div className="mb-8 w-full">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
             Hi, I'm{" "}
-            <span className="inline-block" style={{ minWidth: '280px' }}>
-              {displayText}
+            <span className="inline-block overflow-hidden" style={{ minWidth: '280px' }}>
+              <span 
+                className={`inline-block transition-all duration-300 ease-out ${animationClass}`}
+              >
+                {displayText}
+              </span>
             </span>
           </h1>
         </div>
