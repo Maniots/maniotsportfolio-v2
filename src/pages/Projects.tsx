@@ -31,6 +31,22 @@ const Projects = () => {
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
     },
+    {
+      title: "SkylineProjects",
+      description: "Freelancer site connecting clients with developers for web and app projects",
+      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
+      tags: ["CSS", "HTML", "JS", "PostgreSQL"],
+      githubUrl: "https://github.com",
+      liveUrl: "https://demo.com",
+    },
+    {
+      title: "Interactive CCTV Building Map",
+      description: "Dynamic building map with interactive CCTV camera locations and live feeds",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+      tags: ["CSS", "HTML", "JS", "MySQL"],
+      githubUrl: "https://github.com",
+      liveUrl: "https://demo.com",
+    },
   ];
 
   return (

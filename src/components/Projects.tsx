@@ -1,5 +1,5 @@
 
-import { Code, Gamepad } from "lucide-react";
+import { Code, Gamepad, Globe, FileCode } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
 
@@ -18,6 +18,20 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       icon: <Code className="h-6 w-6 text-accent" />,
       tags: ["MAUI", "PostgreSQL", "Mobile Development"],
+    },
+    {
+      title: "SkylineProjects",
+      description: "Freelancer site school project",
+      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
+      icon: <Globe className="h-6 w-6 text-accent" />,
+      tags: ["CSS", "HTML", "JS", "PostgreSQL"],
+    },
+    {
+      title: "Interactive CCTV Building Map",
+      description: "Dynamic building map with CCTV locations",
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+      icon: <FileCode className="h-6 w-6 text-accent" />,
+      tags: ["CSS", "HTML", "JS", "MySQL"],
     },
   ];
 
