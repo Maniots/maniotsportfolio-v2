@@ -6,25 +6,18 @@ import { AspectRatio } from "./ui/aspect-ratio";
 const Projects = () => {
   const projects = [
     {
-      title: "2D Platformer Game",
-      description: "A retro-style platformer built with Unity and C#",
+      title: "Runalys",
+      description: "Metroidvania 2D pixel art game",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       icon: <Gamepad className="h-6 w-6 text-accent" />,
-      tags: ["Unity", "C#", "2D Graphics"],
+      tags: ["Unity", "C#", "2D Pixel Art"],
     },
     {
-      title: "Game Physics Engine",
-      description: "Custom physics engine implemented in C++",
+      title: "Ticketing Mobile App",
+      description: "Cross-platform mobile application for ticketing",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       icon: <Code className="h-6 w-6 text-accent" />,
-      tags: ["C++", "OpenGL", "Mathematics"],
-    },
-    {
-      title: "RPG Inventory System",
-      description: "Modular inventory system for RPG games",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      icon: <Gamepad className="h-6 w-6 text-accent" />,
-      tags: ["Unity", "C#", "UI Design"],
+      tags: ["MAUI", "PostgreSQL", "Mobile Development"],
     },
   ];
 
@@ -34,7 +27,7 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-white mb-12 text-center">
           Featured Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <Card key={project.title} className="bg-background border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20">
               <CardHeader>

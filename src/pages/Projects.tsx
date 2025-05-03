@@ -16,26 +16,18 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "2D Platformer Game",
-      description: "A retro-style platformer built with Unity and C#",
+      title: "Runalys",
+      description: "Metroidvania 2D pixel art game with immersive gameplay and exploration elements",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-      tags: ["Unity", "C#", "2D Graphics"],
+      tags: ["Unity", "C#", "2D Pixel Art"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
     },
     {
-      title: "Game Physics Engine",
-      description: "Custom physics engine implemented in C++",
+      title: "Ticketing Mobile App",
+      description: "Cross-platform mobile application for ticket management and event organization",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      tags: ["C++", "OpenGL", "Mathematics"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
-    },
-    {
-      title: "RPG Inventory System",
-      description: "Modular inventory system for RPG games",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-      tags: ["Unity", "C#", "UI Design"],
+      tags: ["MAUI", "PostgreSQL", "Mobile Development"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
     },
@@ -123,4 +115,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
