@@ -35,7 +35,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
       githubUrl: "https://github.com/ManuelRizzo88/SkylineProjects",
-      liveUrl: "skylineprojects.onreder.com",
+      liveUrl: "https://skylineprojects.onrender.com",
       status: "concluded",
     },
     {
