@@ -42,6 +42,9 @@ const Projects = () => {
     },
   ];
 
+  // Display only the first 3 projects on the homepage
+  const featuredProjects = projects.slice(0, 3);
+
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container px-4">
@@ -49,7 +52,7 @@ const Projects = () => {
           Featured Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
+          {featuredProjects.map((project) => (
             <Card key={project.title} className="bg-background border border-accent/20 hover:border-accent/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20">
               <CardHeader>
                 <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg overflow-hidden mb-4">
