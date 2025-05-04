@@ -1,7 +1,8 @@
 
-import { Code, Gamepad, Globe, FileCode, Box, Clock, CheckCircle } from "lucide-react";
+import { Code, Gamepad, Globe, FileCode, Box, Clock, CheckCircle, Github } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
+import { Button } from "./ui/button";
 
 const Projects = () => {
   const projects = [
@@ -20,6 +21,7 @@ const Projects = () => {
       icon: <Code className="h-6 w-6 text-accent" />,
       tags: ["MAUI", "PostgreSQL", "Mobile Development"],
       status: "concluded",
+      githubUrl: "https://github.com",
     },
     {
       title: "SkylineProjects",
@@ -28,6 +30,8 @@ const Projects = () => {
       icon: <Globe className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
       status: "concluded",
+      githubUrl: "https://github.com",
+      liveUrl: "https://demo.com",
     },
     {
       title: "Interactive CCTV Building Map",
@@ -44,6 +48,7 @@ const Projects = () => {
       icon: <Box className="h-6 w-6 text-accent" />,
       tags: ["Unity 3D", "C#", "Game Development"],
       status: "concluded",
+      liveUrl: "https://demo.com",
     },
   ];
 
@@ -91,7 +96,7 @@ const Projects = () => {
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -101,6 +106,36 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                {(project.githubUrl || project.liveUrl) && (
+                  <div className="flex gap-4 mt-4">
+                    {project.githubUrl && (
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
+                        asChild
+                      >
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.liveUrl && (
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
+                        asChild
+                      >
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <Globe className="w-4 h-4" />
+                          Demo
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}

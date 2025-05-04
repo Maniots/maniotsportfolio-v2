@@ -125,30 +125,36 @@ const Projects = () => {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
-                    asChild
-                  >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4" />
-                      Code
-                    </a>
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
-                    asChild
-                  >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <Globe className="w-4 h-4" />
-                      Demo
-                    </a>
-                  </Button>
-                </div>
+                {(project.githubUrl || project.liveUrl) && (
+                  <div className="flex gap-4">
+                    {project.githubUrl && (
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
+                        asChild
+                      >
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="w-4 h-4" />
+                          Code
+                        </a>
+                      </Button>
+                    )}
+                    {project.liveUrl && (
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="gap-2 transition-all duration-300 hover:scale-105 hover:bg-accent/10" 
+                        asChild
+                      >
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                          <Globe className="w-4 h-4" />
+                          Demo
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
