@@ -1,5 +1,5 @@
 
-import { Code, Gamepad, Globe, FileCode, Cube } from "lucide-react";
+import { Code, Gamepad, Globe, FileCode, Box } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
 
@@ -37,7 +37,7 @@ const Projects = () => {
       title: "3D Obstacle Course",
       description: "Interactive 3D obstacle game with physics challenges",
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-      icon: <Cube className="h-6 w-6 text-accent" />,
+      icon: <Box className="h-6 w-6 text-accent" />,
       tags: ["Unity 3D", "C#", "Game Development"],
     },
   ];
