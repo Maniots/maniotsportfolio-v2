@@ -1,5 +1,5 @@
 
-import { Code, Gamepad, Globe, FileCode, Box } from "lucide-react";
+import { Code, Gamepad, Globe, FileCode, Box, Clock, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
 
@@ -11,6 +11,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       icon: <Gamepad className="h-6 w-6 text-accent" />,
       tags: ["Unity", "C#", "2D Pixel Art"],
+      status: "ongoing",
     },
     {
       title: "Ticketing Mobile App",
@@ -18,6 +19,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       icon: <Code className="h-6 w-6 text-accent" />,
       tags: ["MAUI", "PostgreSQL", "Mobile Development"],
+      status: "concluded",
     },
     {
       title: "SkylineProjects",
@@ -25,6 +27,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
       icon: <Globe className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
+      status: "concluded",
     },
     {
       title: "Interactive CCTV Building Map",
@@ -32,6 +35,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1557804506-669a67965ba0",
       icon: <FileCode className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "MySQL"],
+      status: "ongoing",
     },
     {
       title: "3D Obstacle Course",
@@ -39,6 +43,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
       icon: <Box className="h-6 w-6 text-accent" />,
       tags: ["Unity 3D", "C#", "Game Development"],
+      status: "concluded",
     },
   ];
 
@@ -62,8 +67,25 @@ const Projects = () => {
                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
                   />
                 </AspectRatio>
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center justify-between gap-2 mb-2">
                   {project.icon}
+                  <div className={`px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${
+                    project.status === "ongoing"
+                      ? "bg-amber-400/20 text-amber-400"
+                      : "bg-green-500/20 text-green-500"
+                  }`}>
+                    {project.status === "ongoing" ? (
+                      <>
+                        <Clock className="w-3 h-3" />
+                        Ongoing
+                      </>
+                    ) : (
+                      <>
+                        <CheckCircle className="w-3 h-3" />
+                        Concluded
+                      </>
+                    )}
+                  </div>
                 </div>
                 <CardTitle className="text-white">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>

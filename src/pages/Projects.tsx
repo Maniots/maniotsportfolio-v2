@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, Globe } from "lucide-react";
+import { Github, Globe, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -22,6 +22,7 @@ const Projects = () => {
       tags: ["Unity", "C#", "2D Pixel Art"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
+      status: "ongoing",
     },
     {
       title: "Ticketing Mobile App",
@@ -30,6 +31,7 @@ const Projects = () => {
       tags: ["MAUI", "PostgreSQL", "Mobile Development"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
+      status: "concluded",
     },
     {
       title: "SkylineProjects",
@@ -38,6 +40,7 @@ const Projects = () => {
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
+      status: "concluded",
     },
     {
       title: "Interactive CCTV Building Map",
@@ -46,6 +49,7 @@ const Projects = () => {
       tags: ["CSS", "HTML", "JS", "MySQL"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
+      status: "ongoing",
     },
     {
       title: "3D Obstacle Course",
@@ -54,6 +58,7 @@ const Projects = () => {
       tags: ["Unity 3D", "C#", "Game Development"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
+      status: "concluded",
     },
   ];
 
@@ -90,7 +95,26 @@ const Projects = () => {
                     className="object-cover w-full h-full transition-transform duration-500 hover:scale-110"
                   />
                 </AspectRatio>
-                <CardTitle className="text-white">{project.title}</CardTitle>
+                <div className="flex items-center justify-between mb-2">
+                  <CardTitle className="text-white">{project.title}</CardTitle>
+                  <div className={`px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1 ${
+                    project.status === "ongoing"
+                      ? "bg-amber-400/20 text-amber-400"
+                      : "bg-green-500/20 text-green-500"
+                  }`}>
+                    {project.status === "ongoing" ? (
+                      <>
+                        <Clock className="w-3 h-3" />
+                        Ongoing
+                      </>
+                    ) : (
+                      <>
+                        <CheckCircle className="w-3 h-3" />
+                        Concluded
+                      </>
+                    )}
+                  </div>
+                </div>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
