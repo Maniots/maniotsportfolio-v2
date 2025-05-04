@@ -17,11 +17,9 @@ const Projects = () => {
   const projects = [
     {
       title: "Runalys",
-      description: "Metroidvania 2D pixel art game with immersive gameplay and exploration elements",
+      description: "MedievalPunk Metroidvania 2D Pixel Art",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       tags: ["Unity", "C#", "2D Pixel Art"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
       status: "ongoing",
     },
     {
@@ -29,8 +27,6 @@ const Projects = () => {
       description: "Cross-platform mobile application for ticket management and event organization",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
       tags: ["MAUI", "PostgreSQL", "Mobile Development"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
       status: "concluded",
     },
     {
