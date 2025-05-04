@@ -34,8 +34,8 @@ const Projects = () => {
       description: "Freelancer site connecting clients with developers for web and app projects",
       image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
+      githubUrl: "https://github.com/ManuelRizzo88/SkylineProjects",
+      liveUrl: "skylineprojects.onreder.com",
       status: "concluded",
     },
     {
