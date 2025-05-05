@@ -15,12 +15,15 @@ function App() {
   // Create a client inside the function component to ensure it's not shared between requests
   const queryClient = new QueryClient();
 
+  // Get the base URL from the Vite environment or default to '/'
+  const baseUrl = import.meta.env.BASE_URL || '/';
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename={baseUrl}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
