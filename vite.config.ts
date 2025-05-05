@@ -22,4 +22,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    sourcemap: true,
+    // Ensure output assets are properly referenced
+    assetsDir: "assets",
+  },
 }));
