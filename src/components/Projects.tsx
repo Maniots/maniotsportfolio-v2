@@ -30,8 +30,8 @@ const Projects = () => {
       icon: <Globe className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
       status: "concluded",
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
+      githubUrl: "https://github.com/Maniots/SkylineProjects",
+      liveUrl: "skylineprojects.onrender.com",
     },
     {
       title: "Interactive CCTV Building Map",
