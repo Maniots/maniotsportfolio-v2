@@ -2,6 +2,7 @@
 import { useTextAnimation } from "@/hooks/useTextAnimation";
 import { Button } from "./ui/button";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const { displayText, isAnimating, direction } = useTextAnimation(["Manuel Rizzo", "Maniots"], 3000);
@@ -76,7 +77,7 @@ const Hero = () => {
             <a href="#projects">View Projects</a>
           </Button>
           <Button variant="outline" asChild>
-            <a href="/contact">Contact Me</a>
+            <Link to="/contact">Contact Me</Link>
           </Button>
         </div>
       </div>
