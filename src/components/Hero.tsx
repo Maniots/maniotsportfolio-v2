@@ -77,7 +77,7 @@ const Hero = () => {
             <a href="#projects">View Projects</a>
           </Button>
           <Button variant="outline" asChild>
-            <Link to="/contact">Contact Me</Link>
+            <Link to="/maniotsportfolio-v2/contact">Contact Me</Link>
           </Button>
         </div>
       </div>
