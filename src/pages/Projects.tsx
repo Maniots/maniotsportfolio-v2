@@ -49,11 +49,10 @@ const Projects = () => {
     },
     {
       title: "3D Obstacle Course",
-      description: "Challenging 3D game with physics-based obstacles and multiple levels",
+      description: "Challenging 3D game with physics-based obstacles",
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
       tags: ["Unity 3D", "C#", "Game Development"],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.com",
+      githubUrl: "https://github.com/Maniots/SchivaOstacoli3D",
       status: "concluded",
     },
   ];
