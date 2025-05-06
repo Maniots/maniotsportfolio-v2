@@ -48,7 +48,7 @@ const Projects = () => {
       icon: <Box className="h-6 w-6 text-accent" />,
       tags: ["Unity 3D", "C#", "Game Development"],
       status: "concluded",
-      liveUrl: "https://demo.com",
+      githubUrl:"https://github.com/Maniots/SchivaOstacoli3D",
     },
   ];
 
