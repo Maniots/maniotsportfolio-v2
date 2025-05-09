@@ -55,17 +55,17 @@ const Skills = () => {
     {
       category: "Game Development",
       items: [
-        { icon: "CSharp", name: "C#", level: 90 },
-        { icon: "Unity", name: "Unity", level: 85 },
+        { icon: "CSharp", name: "C#", level: 80 },
+        { icon: "Unity", name: "Unity", level: 65 },
       ],
     },
     {
       category: "Web Technologies",
       items: [
-        { icon: "Html5", name: "HTML", level: 85 },
+        { icon: "Html5", name: "HTML", level: 95 },
         { icon: "Css3", name: "CSS", level: 80 },
         { icon: "Javascript", name: "JavaScript", level: 85 },
-        { icon: "Nodedotjs", name: "Node.js", level: 80 },
+        { icon: "Nodedotjs", name: "Node.js", level: 75 },
       ],
     },
     {
@@ -73,24 +73,25 @@ const Skills = () => {
       items: [
         { icon: "Git", name: "Git", level: 85 },
         { icon: "Github", name: "GitHub", level: 85 },
-        { icon: "Docker", name: "Docker", level: 75 },
-        { icon: "Linux", name: "Linux", level: 80 },
-        { icon: "Amazonaws", name: "AWS", level: 70 },
+        { icon: "Docker", name: "Docker", level: 80 },
+        { icon: "Linux", name: "Linux", level: 65 },
+        { icon: "Amazonaws", name: "AWS", level: 45 },
       ],
     },
     {
       category: "Databases",
       items: [
         { icon: "Postgresql", name: "PostgreSQL", level: 80 },
-        { icon: "Mongodb", name: "MongoDB", level: 75 },
+        { icon: "Mongodb", name: "MongoDB", level: 25 },
+        { icon: "Mysql", name: "MySQL", level: 75 },
       ],
     },
     {
       category: "Programming Languages & Frameworks",
       items: [
-        { icon: "Python", name: "Python", level: 80 },
-        { icon: "Dotnet", name: "MAUI", level: 75 },
-        { icon: "Dotnet", name: "NET", level: 85 },
+        { icon: "Python", name: "Python", level: 15 },
+        { icon: "Dotnet", name: "MAUI", level: 60 },
+        { icon: "Dotnet", name: "NET", level: 50 },
       ],
     },
   ];
