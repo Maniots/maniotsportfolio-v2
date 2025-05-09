@@ -12,7 +12,7 @@ const Projects = () => {
     {
       title: "Runalys",
       description: "Metroidvania 2D pixel art game",
-      image: "https://ibb.co/cS42vLkV",
+      image: "https://i.ibb.co/8L1PBcNt/Runalys-Coming-Soon.png",
       icon: <Gamepad className="h-6 w-6 text-accent" />,
       tags: ["Unity", "C#", "2D Pixel Art"],
       status: "ongoing",
@@ -29,7 +29,7 @@ const Projects = () => {
     {
       title: "SkylineProjects",
       description: "Freelancer site school project",
-      image: "https://ibb.co/CK28sPsD",
+      image: "https://i.ibb.co/N2SCnTnb/Screenshot-2025-05-09-200836.png",
       icon: <Globe className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
       status: "concluded",
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: "Interactive CCTV Building Map",
       description: "Dynamic building map with CCTV locations",
-      image: "https://ibb.co/LhRH2Q4Q",
+      image: "https://i.ibb.co/cX3V7bzb/Sicurplan-Portfolio.png",
       icon: <FileCode className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "MySQL"],
       status: "ongoing",
