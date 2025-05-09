@@ -20,21 +20,21 @@ const Projects = () => {
     {
       title: "Runalys",
       description: "MedievalPunk Metroidvania 2D Pixel Art",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      image: "/src/img/RunalysComingSoon.png",
       tags: ["Unity", "C#", "2D Pixel Art"],
       status: "ongoing",
     },
     {
       title: "Ticketing Mobile App",
       description: "Cross-platform mobile application for ticket management and event organization",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      image: "/src/img/ticketing-app.png",
       tags: ["MAUI", "PostgreSQL", "Mobile Development"],
       status: "concluded",
     },
     {
       title: "SkylineProjects",
       description: "Freelancer site connecting clients with developers for web and app projects",
-      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
+      image: "/src/img/skylineprojects.png",
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
       githubUrl: "https://github.com/ManuelRizzo88/SkylineProjects",
       liveUrl: "https://skylineprojects.onrender.com",
@@ -43,7 +43,7 @@ const Projects = () => {
     {
       title: "Interactive CCTV Building Map",
       description: "Dynamic building map with interactive CCTV camera locations and live feeds",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+      image: "/src/img/SicurplanPortfolio.png",
       tags: ["CSS", "HTML", "JS", "MySQL"],
       githubUrl: "https://github.com",
       liveUrl: "https://demo.com",
@@ -52,7 +52,7 @@ const Projects = () => {
     {
       title: "3D Obstacle Course",
       description: "Challenging 3D game with physics-based obstacles",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+      image: "/src/img/obstacle-course.png",
       tags: ["Unity 3D", "C#", "Game Development"],
       githubUrl: "https://github.com/Maniots/SchivaOstacoli3D",
       status: "concluded",
