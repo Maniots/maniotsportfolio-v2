@@ -52,7 +52,7 @@ export const translations = {
     // About
     'about_me': 'About Me',
     'about_description_1': 'As an IT student with a passion for game development, I\'m constantly exploring the intersection of technology and creative storytelling. My journey in computer science has equipped me with strong programming fundamentals, while my game development projects have helped me develop practical skills in Unity and C#.',
-    'about_description_2': 'Currently pursuing my degree in Computer Science, I focus on game development in my free time, creating small but engaging projects that showcase my growing expertise in game mechanics, UI design, and optimization.',
+    'about_description_2': 'I am a Computer Science student with a deep passion for game development. In my free time, I play video games, create small Unity and C# projects, and refine my expertise in game mechanics, UI design, and optimization. My long-term ambition is to build and lead my own video game development team, blending technical skills with creative storytelling to deliver immersive gaming experiences.',
     'quick_facts': 'Quick Facts',
     'fact_1': 'Computer Science Student',
     'fact_2': 'Game Development Enthusiast',
@@ -76,7 +76,7 @@ export const translations = {
   },
   it: {
     // Header
-    'portfolio': 'Portfolio di Manuel Rizzo',
+    'portfolio': 'Manuel Rizzo Portfolio',
     'projects': 'Progetti',
     'skills': 'Competenze',
     'about': 'Chi Sono',
@@ -107,8 +107,8 @@ export const translations = {
     
     // About
     'about_me': 'Chi Sono',
-    'about_description_1': 'Come studente IT con una passione per lo sviluppo di giochi, esploro costantemente l\'intersezione tra tecnologia e narrazione creativa. Il mio percorso in informatica mi ha dotato di solide basi di programmazione, mentre i miei progetti di sviluppo di giochi mi hanno aiutato a sviluppare competenze pratiche in Unity e C#.',
-    'about_description_2': 'Attualmente sto studiando per la mia laurea in Informatica e mi dedico allo sviluppo di giochi nel tempo libero, creando progetti piccoli ma coinvolgenti che mostrano la mia crescente competenza nelle meccaniche di gioco, nel design dell\'interfaccia e nell\'ottimizzazione.',
+    'about_description_1': 'Come studente di Informatica con una passione per lo sviluppo di giochi, esploro costantemente l\'intersezione tra tecnologia e narrazione creativa. Il mio percorso in informatica mi ha dotato di solide basi di programmazione, mentre i miei progetti di sviluppo di giochi mi hanno aiutato a sviluppare competenze pratiche in Unity e C#.',
+    'about_description_2': 'Sono uno studente di Informatica con una forte passione per lo sviluppo di videogiochi. Nel tempo libero, approfondisco continuamente le mie competenze giocando ai videogiochi, realizzando piccoli progetti in Unity e C# e perfezionando il mio approccio al game design, all’interfaccia utente e all’ottimizzazione. Il mio obiettivo a lungo termine è fondare un team di sviluppo videoludico in cui unire competenze tecniche e creatività per realizzare esperienze di gioco coinvolgenti.',
     'quick_facts': 'Fatti Rapidi',
     'fact_1': 'Studente di Informatica',
     'fact_2': 'Appassionato di Sviluppo Giochi',
