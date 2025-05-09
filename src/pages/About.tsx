@@ -1,13 +1,24 @@
 
 import Header from "@/components/Header";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const facts = [
+    t('fact_1'),
+    t('fact_2'),
+    t('fact_3'),
+    t('fact_4'),
+    t('fact_5'),
+    t('fact_6')
+  ];
 
   return (
     <div className="min-h-screen bg-background text-white">
@@ -21,7 +32,7 @@ const About = () => {
             transition: 'all 0.5s ease-out',
           }}
         >
-          About Me
+          {t('about_me')}
         </h1>
         <div className="grid md:grid-cols-2 gap-8">
           <div 
@@ -33,16 +44,10 @@ const About = () => {
             }}
           >
             <p className="text-lg text-muted hover:text-white transition-colors duration-300">
-              As an IT student with a passion for game development, I'm constantly exploring
-              the intersection of technology and creative storytelling. My journey in
-              computer science has equipped me with strong programming fundamentals,
-              while my game development projects have helped me develop practical skills
-              in Unity and C#.
+              {t('about_description_1')}
             </p>
             <p className="text-lg text-muted hover:text-white transition-colors duration-300">
-              Currently pursuing my degree in Computer Science, I focus on game
-              development in my free time, creating small but engaging projects that
-              showcase my growing expertise in game mechanics, UI design, and optimization.
+              {t('about_description_2')}
             </p>
           </div>
           <div 
@@ -53,9 +58,9 @@ const About = () => {
               transition: 'all 0.5s ease-out 0.3s',
             }}
           >
-            <h2 className="text-2xl font-semibold mb-4">Quick Facts</h2>
+            <h2 className="text-2xl font-semibold mb-4">{t('quick_facts')}</h2>
             <ul className="space-y-2">
-              {["Computer Science Student", "Game Development Enthusiast", "Unity & C# Developer", "Problem Solver", "Italian", "Team Player"].map((fact, index) => (
+              {facts.map((fact, index) => (
                 <li 
                   key={fact}
                   className="flex items-center gap-2 transform transition-all duration-300 hover:translate-x-2"

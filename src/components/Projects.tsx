@@ -3,8 +3,11 @@ import { Code, Gamepad, Globe, FileCode, Box, Clock, CheckCircle, Github } from 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
 import { Button } from "./ui/button";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Projects = () => {
+  const { t } = useLanguage();
+
   const projects = [
     {
       title: "Runalys",
@@ -59,7 +62,7 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-background">
       <div className="container px-4">
         <h2 className="text-3xl font-bold text-white mb-12 text-center">
-          Featured Projects
+          {t('featured_projects')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featuredProjects.map((project) => (
@@ -82,12 +85,12 @@ const Projects = () => {
                     {project.status === "ongoing" ? (
                       <>
                         <Clock className="w-3 h-3" />
-                        Ongoing
+                        {t('ongoing')}
                       </>
                     ) : (
                       <>
                         <CheckCircle className="w-3 h-3" />
-                        Concluded
+                        {t('concluded')}
                       </>
                     )}
                   </div>
@@ -117,7 +120,7 @@ const Projects = () => {
                       >
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="w-4 h-4" />
-                          Code
+                          {t('code')}
                         </a>
                       </Button>
                     )}
@@ -130,7 +133,7 @@ const Projects = () => {
                       >
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <Globe className="w-4 h-4" />
-                          Demo
+                          {t('demo')}
                         </a>
                       </Button>
                     )}

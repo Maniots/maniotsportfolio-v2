@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "@/components/ui/sonner";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,6 +14,7 @@ const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -34,8 +36,8 @@ const Contact = () => {
     window.location.href = mailtoUrl;
     
     // Show success toast
-    toast.success("Opening your email client", {
-      description: "Thanks for reaching out!"
+    toast.success(t('opening_email_client'), {
+      description: t('thanks_for_reaching_out')
     });
     
     // Reset form after a short delay
@@ -61,7 +63,7 @@ const Contact = () => {
         >
           <div className="flex items-center gap-2 mb-8">
             <Mail className="h-6 w-6 text-accent animate-bounce" />
-            <h1 className="text-4xl font-bold">Get in Touch</h1>
+            <h1 className="text-4xl font-bold">{t('get_in_touch')}</h1>
           </div>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div 
@@ -72,10 +74,10 @@ const Contact = () => {
                 transition: 'all 0.5s ease-out 0.2s',
               }}
             >
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name">{t('name')}</Label>
               <Input
                 id="name"
-                placeholder="Your name"
+                placeholder={t('name_placeholder')}
                 className="bg-background border-accent/20 transition-all duration-300 focus:border-accent hover:border-accent/40"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -90,11 +92,11 @@ const Contact = () => {
                 transition: 'all 0.5s ease-out 0.3s',
               }}
             >
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">{t('email')}</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="your.email@example.com"
+                placeholder={t('email_placeholder')}
                 className="bg-background border-accent/20 transition-all duration-300 focus:border-accent hover:border-accent/40"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -109,12 +111,12 @@ const Contact = () => {
                 transition: 'all 0.5s ease-out 0.4s',
               }}
             >
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message">{t('message')}</Label>
               <textarea
                 id="message"
                 rows={5}
                 className="w-full rounded-md bg-background border border-accent/20 p-3 text-white transition-all duration-300 focus:border-accent hover:border-accent/40"
-                placeholder="Your message here..."
+                placeholder={t('message_placeholder')}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required
@@ -130,7 +132,7 @@ const Contact = () => {
               }}
               disabled={isSubmitting}
             >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
+              {isSubmitting ? t('sending') : t('send_message')}
             </Button>
           </form>
         </div>

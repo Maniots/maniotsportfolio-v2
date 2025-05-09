@@ -5,9 +5,11 @@ import { Progress } from "@/components/ui/progress";
 import { useEffect, useState } from "react";
 import * as SimpleIcons from 'simple-icons';
 import { LucideCode, Code2, Database, ServerCrash, Globe, Cpu } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -53,14 +55,14 @@ const Skills = () => {
 
   const skills = [
     {
-      category: "Game Development",
+      category: t('game_development'),
       items: [
         { icon: "CSharp", name: "C#", level: 80 },
         { icon: "Unity", name: "Unity", level: 65 },
       ],
     },
     {
-      category: "Web Technologies",
+      category: t('web_technologies'),
       items: [
         { icon: "Html5", name: "HTML", level: 95 },
         { icon: "Css3", name: "CSS", level: 80 },
@@ -69,7 +71,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Tools & Technologies",
+      category: t('tools_technologies'),
       items: [
         { icon: "Git", name: "Git", level: 85 },
         { icon: "Github", name: "GitHub", level: 85 },
@@ -79,7 +81,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Databases",
+      category: t('databases'),
       items: [
         { icon: "Postgresql", name: "PostgreSQL", level: 80 },
         { icon: "Mongodb", name: "MongoDB", level: 25 },
@@ -87,7 +89,7 @@ const Skills = () => {
       ],
     },
     {
-      category: "Programming Languages & Frameworks",
+      category: t('programming_languages'),
       items: [
         { icon: "Python", name: "Python", level: 15 },
         { icon: "Dotnet", name: "MAUI", level: 60 },
@@ -100,7 +102,7 @@ const Skills = () => {
     <div className="min-h-screen bg-background text-white">
       <Header />
       <main className="container px-4 py-20">
-        <h1 className="text-4xl font-bold mb-12 animate-fade-in">Skills</h1>
+        <h1 className="text-4xl font-bold mb-12 animate-fade-in">{t('skills_title')}</h1>
         <div className="grid md:grid-cols-3 gap-6 animate-fade-in">
           {skills.map((skillSet, index) => (
             <Card 

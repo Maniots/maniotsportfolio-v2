@@ -3,8 +3,11 @@ import { Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/context/LanguageContext";
 
 const MobileNav = () => {
+  const { t } = useLanguage();
+
   return (
     <Drawer>
       <DrawerTrigger asChild>
@@ -16,10 +19,10 @@ const MobileNav = () => {
       <DrawerContent>
         <div className="flex flex-col gap-4 p-6">
           {[
-            { to: "/projects", label: "Projects" },
-            { to: "/skills", label: "Skills" },
-            { to: "/about", label: "About" },
-            { to: "/contact", label: "Contact" }
+            { to: "/projects", label: t('projects') },
+            { to: "/skills", label: t('skills') },
+            { to: "/about", label: t('about') },
+            { to: "/contact", label: t('contact') }
           ].map(({ to, label }) => (
             <Link 
               key={to} 

@@ -6,9 +6,11 @@ import { Github, Globe, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsVisible(true);
@@ -69,7 +71,7 @@ const Projects = () => {
             transition: 'all 0.5s ease-out',
           }}
         >
-          Projects
+          {t('projects')}
         </h1>
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
@@ -100,12 +102,12 @@ const Projects = () => {
                     {project.status === "ongoing" ? (
                       <>
                         <Clock className="w-3 h-3" />
-                        Ongoing
+                        {t('ongoing')}
                       </>
                     ) : (
                       <>
                         <CheckCircle className="w-3 h-3" />
-                        Concluded
+                        {t('concluded')}
                       </>
                     )}
                   </div>
@@ -135,7 +137,7 @@ const Projects = () => {
                       >
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="w-4 h-4" />
-                          Code
+                          {t('code')}
                         </a>
                       </Button>
                     )}
@@ -148,7 +150,7 @@ const Projects = () => {
                       >
                         <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                           <Globe className="w-4 h-4" />
-                          Demo
+                          {t('demo')}
                         </a>
                       </Button>
                     )}
