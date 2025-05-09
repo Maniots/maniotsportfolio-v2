@@ -12,7 +12,7 @@ const Projects = () => {
     {
       title: "Runalys",
       description: "Metroidvania 2D pixel art game",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      image: "/src/img/RunalysComingSoon.png",
       icon: <Gamepad className="h-6 w-6 text-accent" />,
       tags: ["Unity", "C#", "2D Pixel Art"],
       status: "ongoing",
@@ -29,7 +29,7 @@ const Projects = () => {
     {
       title: "SkylineProjects",
       description: "Freelancer site school project",
-      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8",
+      image: "/src/img/skylineprojects.png",
       icon: <Globe className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "PostgreSQL"],
       status: "concluded",
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: "Interactive CCTV Building Map",
       description: "Dynamic building map with CCTV locations",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+      image: "/src/img/SicurplanPortfolio.png",
       icon: <FileCode className="h-6 w-6 text-accent" />,
       tags: ["CSS", "HTML", "JS", "MySQL"],
       status: "ongoing",
