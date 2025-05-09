@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,7 +17,8 @@ const Contact = () => {
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    document.title = `RizzoPortfolio | ${t('contact')}`;
+  }, [t]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

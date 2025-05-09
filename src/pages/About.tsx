@@ -9,7 +9,8 @@ const About = () => {
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    document.title = `RizzoPortfolio | ${t('about')}`;
+  }, [t]);
 
   const facts = [
     t('fact_1'),

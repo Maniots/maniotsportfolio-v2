@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +13,8 @@ const Projects = () => {
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    document.title = `RizzoPortfolio | ${t('projects')}`;
+  }, [t]);
 
   const projects = [
     {

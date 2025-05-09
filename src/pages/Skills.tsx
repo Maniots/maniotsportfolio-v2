@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -13,7 +12,8 @@ const Skills = () => {
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
+    document.title = `RizzoPortfolio | ${t('skills')}`;
+  }, [t]);
 
   // Improved function to render icons from Simple Icons with fallback
   const renderIcon = (iconName: string, displayName: string) => {

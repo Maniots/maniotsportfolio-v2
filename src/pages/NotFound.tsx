@@ -1,14 +1,18 @@
+
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const NotFound = () => {
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+    document.title = `RizzoPortfolio | 404`;
   }, [location.pathname]);
 
   return (
@@ -22,6 +26,3 @@ const NotFound = () => {
       </div>
     </div>
   );
-};
-
-export default NotFound;
