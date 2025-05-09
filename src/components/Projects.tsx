@@ -20,7 +20,7 @@ const Projects = () => {
     {
       title: "Ticketing Mobile App",
       description: "Cross-platform mobile application for ticketing",
-      image: "/src/img/ticketing-app.png",
+      image: "https://i.ibb.co/cKmV3y0K/Placholder.png",
       icon: <Code className="h-6 w-6 text-accent" />,
       tags: ["MAUI", "PostgreSQL", "Mobile Development"],
       status: "concluded",
@@ -47,7 +47,7 @@ const Projects = () => {
     {
       title: "3D Obstacle Course",
       description: "Interactive 3D obstacle game with physics challenges",
-      image: "/src/img/obstacle-course.png",
+      image: "https://i.ibb.co/cKmV3y0K/Placholder.png",
       icon: <Box className="h-6 w-6 text-accent" />,
       tags: ["Unity 3D", "C#", "Game Development"],
       status: "concluded",
