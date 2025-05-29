@@ -57,6 +57,15 @@ const Projects = () => {
       githubUrl: "https://github.com/Maniots/SchivaOstacoli3D",
       status: "concluded",
     },
+    {
+      title: "TaxiXpress",
+      description: "Taxi booking web application [school project]",
+      image: "https://i.ibb.co/YwfzynT/image.png",
+      tags: ["TailwindCSS", "HTML", "NodeJS","PostgreSQL"],
+      status: "concluded",
+      githubUrl:"https://github.com/Maniots/TaxiXpress",
+      liveUrl: "taxixpress.onrender.com",
+    },
   ];
 
   return (

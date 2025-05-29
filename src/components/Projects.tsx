@@ -53,6 +53,16 @@ const Projects = () => {
       status: "concluded",
       githubUrl:"https://github.com/Maniots/SchivaOstacoli3D",
     },
+    {
+      title: "TaxiXpress",
+      description: "Taxi booking web application [school project]",
+      image: "https://i.ibb.co/YwfzynT/image.png",
+      icon: <Box className="h-6 w-6 text-accent" />,
+      tags: ["TailwindCSS", "HTML", "NodeJS","PostgreSQL"],
+      status: "concluded",
+      githubUrl:"https://github.com/Maniots/TaxiXpress",
+      liveUrl: "taxixpress.onrender.com",
+    },
   ];
 
   // Display only the first 3 projects on the homepage
