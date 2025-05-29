@@ -64,7 +64,7 @@ const Projects = () => {
       tags: ["TailwindCSS", "HTML", "NodeJS","PostgreSQL"],
       status: "concluded",
       githubUrl:"https://github.com/Maniots/TaxiXpress",
-      liveUrl: "taxixpress.onrender.com",
+      liveUrl: "https://taxixpress.onrender.com",
     },
   ];
 

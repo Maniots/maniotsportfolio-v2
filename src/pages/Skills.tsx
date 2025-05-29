@@ -68,6 +68,7 @@ const Skills = () => {
         { icon: "Css3", name: "CSS", level: 80 },
         { icon: "Javascript", name: "JavaScript", level: 85 },
         { icon: "Nodedotjs", name: "Node.js", level: 75 },
+        { icon: "Tailwindcss", name: "Tailwind CSS", level: 35 },
       ],
     },
     {
