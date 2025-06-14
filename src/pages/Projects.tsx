@@ -66,6 +66,15 @@ const Projects = () => {
       githubUrl:"https://github.com/Maniots/TaxiXpress",
       liveUrl: "https://taxixpress.onrender.com",
     },
+    {
+      title: "SicurplanWeb",
+      description: "Static website for Sicurplan.com ",
+      image: "https://i.ibb.co/cX3V7bzb/Sicurplan-Portfolio.png",
+      icon: <Box className="h-6 w-6 text-accent" />,
+      tags: ["TailwindCSS", "HTML", "JS"],
+      status: "ongoing",
+      githubUrl:"https://github.com/Maniots/SicurplanWeb",
+    },
   ];
 
   return (
