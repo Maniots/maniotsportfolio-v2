@@ -1,30 +1,17 @@
+import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from 'vitest/config'
+import vue from '@vitejs/plugin-vue'
 
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
-
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  // Correctly set the base path for GitHub Pages deployment
-  base: "/maniotsportfolio-v2/",
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [
-    react(),
-    mode === 'development' &&
-    componentTagger(),
-  ].filter(Boolean),
+export default defineConfig({
+  base: '/maniotsportfolio-v2/',
+  plugins: [vue()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  build: {
-    sourcemap: true,
-    // Ensure output assets are properly referenced
-    assetsDir: "assets",
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
   },
-}));
+})
