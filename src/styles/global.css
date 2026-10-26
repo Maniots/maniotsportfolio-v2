@@ -1,0 +1,21 @@
+@import './tokens.css';
+@import './reset.css';
+@import './layout.css';
+@import './components.css';
+@import './motion.css';
+@import './responsive.css';
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-underline-offset: 0.2em; }
+::selection { background: var(--color-accent); color: var(--color-bg); }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+[tabindex="-1"]:focus { outline: none; }
+.skip-link { position: fixed; z-index: 110; top: 0; left: 1rem; padding: 0.75rem 1rem; background: var(--color-text); color: var(--color-bg); transform: translateY(-110%); }
+.skip-link:focus { transform: translateY(0); }

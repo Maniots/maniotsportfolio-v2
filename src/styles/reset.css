@@ -1,0 +1,10 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: dark; scroll-behavior: smooth; }
+body, h1, h2, h3, p, ul, ol { margin: 0; }
+ul, ol { padding: 0; }
+body { min-width: 320px; min-height: 100vh; }
+img, picture { display: block; max-width: 100%; }
+button, input, textarea { font: inherit; }
+a { color: inherit; }
+button { color: inherit; }
+button { border: 0; background: none; }

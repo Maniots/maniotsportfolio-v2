@@ -1,0 +1,66 @@
+import type { LocalizedText, Project } from '@/types/content'
+
+const text = (en: string, it: string): LocalizedText => ({ en, it })
+const asset = (filename: string) => `${import.meta.env.BASE_URL}projects/${filename}`
+
+export const projects: Project[] = [
+  {
+    slug: 'everysync', title: 'EverySync', year: '2026', status: 'active', featured: true,
+    type: text('Windows desktop app', 'Applicazione desktop Windows'),
+    summary: text('Sync selected app data, game saves and settings across PCs and cloud storage.', 'Sincronizza dati delle app, salvataggi e impostazioni tra PC e archivi cloud.'),
+    challenge: text('Moving between computers leaves important application data scattered across local folders and providers.', 'Passare tra più computer disperde dati importanti delle applicazioni tra cartelle locali e provider diversi.'),
+    solution: text('A safety-first desktop workspace for choosing folders, destinations and ordered download sources.', 'Un workspace desktop orientato alla sicurezza per scegliere cartelle, destinazioni e priorità di download.'),
+    contribution: text('Product design, Python architecture, PySide6 interface, cloud integrations, Windows automation and release pipeline.', 'Product design, architettura Python, interfaccia PySide6, integrazioni cloud, automazione Windows e pipeline di rilascio.'),
+    outcome: text('A distributable Windows app with direct cloud connections, backups, dry runs and in-app updates.', 'Un’app Windows distribuibile con connessioni cloud dirette, backup, dry run e aggiornamenti integrati.'),
+    role: text('Creator & developer', 'Ideatore e sviluppatore'),
+    technologies: ['Python', 'PySide6', 'Microsoft Graph', 'S3', 'SFTP', 'WebDAV'],
+    cover: asset('everysync.png'), coverAlt: text('EverySync application logo', 'Logo dell’applicazione EverySync'),
+    links: { repository: 'https://github.com/Maniots/OneDriveSync', product: 'https://maniots.github.io/EverySync-site/', download: 'https://github.com/Maniots/OneDriveSync/releases/latest' },
+  },
+  {
+    slug: 'runalys', title: 'Runalys', year: '2025—', status: 'active', featured: true,
+    type: text('2D game', 'Videogioco 2D'),
+    summary: text('A medieval-punk metroidvania shaped through pixel art, exploration and responsive combat.', 'Un metroidvania medieval-punk costruito con pixel art, esplorazione e combattimento reattivo.'),
+    challenge: text('Create a coherent game feel while building art, systems and world progression in parallel.', 'Creare un game feel coerente sviluppando in parallelo grafica, sistemi e progressione del mondo.'),
+    solution: text('Iterative Unity prototypes connect movement, combat and level design before expanding scope.', 'Prototipi iterativi in Unity collegano movimento, combattimento e level design prima di ampliare lo scope.'),
+    contribution: text('Game design, C# gameplay systems, Unity implementation and visual direction.', 'Game design, sistemi di gameplay in C#, implementazione Unity e direzione visiva.'),
+    outcome: text('An active long-term project used to refine both technical and creative game-development skills.', 'Un progetto attivo di lungo periodo per affinare competenze tecniche e creative nello sviluppo di videogiochi.'),
+    role: text('Game developer', 'Game developer'), technologies: ['Unity', 'C#', '2D', 'Pixel Art'],
+    cover: asset('runalys.png'), coverAlt: text('Runalys pixel-art scene', 'Scena pixel-art di Runalys'), links: {},
+  },
+  {
+    slug: 'skyline-projects', title: 'SkylineProjects', year: '2025', status: 'completed', featured: true,
+    type: text('Web platform', 'Piattaforma web'),
+    summary: text('A marketplace concept connecting clients with developers for web and app projects.', 'Un marketplace che mette in contatto clienti e sviluppatori per progetti web e app.'),
+    challenge: text('Turn a broad service marketplace into a clear, navigable school project.', 'Trasformare un marketplace di servizi ampio in un progetto scolastico chiaro e navigabile.'),
+    solution: text('A task-focused flow combines project discovery, developer profiles and a PostgreSQL-backed application.', 'Un flusso orientato alle attività unisce ricerca progetti, profili sviluppatore e un’applicazione basata su PostgreSQL.'),
+    contribution: text('Frontend implementation, interaction design and database-backed feature development.', 'Implementazione frontend, interaction design e sviluppo di funzionalità collegate al database.'),
+    outcome: text('A deployed full-stack prototype that demonstrates end-to-end web delivery.', 'Un prototipo full-stack pubblicato che dimostra la realizzazione web end-to-end.'),
+    role: text('Full-stack developer', 'Sviluppatore full-stack'), technologies: ['HTML', 'CSS', 'JavaScript', 'PostgreSQL'],
+    cover: asset('skyline.png'), coverAlt: text('SkylineProjects website', 'Sito SkylineProjects'),
+    links: { repository: 'https://github.com/ManuelRizzo88/SkylineProjects', live: 'https://skylineprojects.onrender.com' },
+  },
+  {
+    slug: 'taxixpress', title: 'TaxiXpress', year: '2025', status: 'completed', featured: true,
+    type: text('Booking web app', 'Web app di prenotazione'),
+    summary: text('A school project exploring a complete taxi-booking workflow on the web.', 'Un progetto scolastico che esplora un flusso completo di prenotazione taxi sul web.'),
+    challenge: text('Coordinate booking screens, server behavior and persistent data in one coherent experience.', 'Coordinare schermate di prenotazione, logica server e dati persistenti in un’esperienza coerente.'),
+    solution: text('A responsive Node.js application backed by PostgreSQL and a focused booking interface.', 'Un’applicazione Node.js responsive con PostgreSQL e un’interfaccia focalizzata sulla prenotazione.'),
+    contribution: text('Interface development, server integration and relational data modeling.', 'Sviluppo dell’interfaccia, integrazione server e modellazione dei dati relazionali.'),
+    outcome: text('A deployed learning project covering the core layers of a transactional web app.', 'Un progetto didattico pubblicato che copre i livelli principali di una web app transazionale.'),
+    role: text('Full-stack developer', 'Sviluppatore full-stack'), technologies: ['Node.js', 'Tailwind CSS', 'PostgreSQL'],
+    cover: asset('taxixpress.png'), coverAlt: text('TaxiXpress booking interface', 'Interfaccia di prenotazione TaxiXpress'),
+    links: { repository: 'https://github.com/Maniots/TaxiXpress', live: 'https://taxixpress.onrender.com' },
+  },
+  {
+    slug: 'ticketing-mobile-app', title: 'Ticketing Mobile App', year: '2025', status: 'completed', featured: true,
+    type: text('Cross-platform mobile app', 'App mobile multipiattaforma'),
+    summary: text('A cross-platform application for ticket management and event organization.', 'Un’applicazione multipiattaforma per gestire ticket e organizzare eventi.'),
+    challenge: text('Keep event and ticket workflows understandable across different mobile platforms.', 'Mantenere comprensibili i flussi di eventi e ticket su piattaforme mobile diverse.'),
+    solution: text('A shared .NET MAUI interface connects the main management flows to PostgreSQL data.', 'Un’interfaccia .NET MAUI condivisa collega i principali flussi gestionali ai dati PostgreSQL.'),
+    contribution: text('Cross-platform UI, application logic and database integration.', 'UI multipiattaforma, logica applicativa e integrazione con il database.'),
+    outcome: text('A completed application prototype focused on portable architecture and structured data.', 'Un prototipo completo focalizzato su architettura portabile e dati strutturati.'),
+    role: text('Application developer', 'Sviluppatore applicazioni'), technologies: ['.NET MAUI', 'C#', 'PostgreSQL'],
+    cover: asset('ticketing.svg'), coverAlt: text('Ticketing application interface concept', 'Concept dell’interfaccia di ticketing'), links: {},
+  },
+]

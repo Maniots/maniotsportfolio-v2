@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Redirecting — Manuel Rizzo</title>
+    <script>
+      (function () {
+        var base = '/maniotsportfolio-v2'
+        var path = window.location.pathname.indexOf(base) === 0
+          ? window.location.pathname.slice(base.length)
+          : window.location.pathname
+        sessionStorage.setItem('portfolio-redirect', path + window.location.search + window.location.hash)
+        window.location.replace(base + '/')
+      }())
+    </script>
+  </head>
+  <body></body>
+</html>

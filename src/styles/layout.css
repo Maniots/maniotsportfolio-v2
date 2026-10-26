@@ -1,0 +1,44 @@
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image: linear-gradient(90deg, transparent calc(100% - 1px), rgba(168, 117, 255, 0.055) 1px);
+  background-size: calc((100vw - 2 * var(--gutter)) / 6) 100%;
+  content: '';
+  pointer-events: none;
+}
+
+.site-header, .site-footer, .section-grid, .page-intro, .all-projects, .story-grid, .project-detail {
+  width: min(100%, var(--container));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section-grid { display: grid; grid-template-columns: minmax(9rem, 1fr) minmax(0, 5fr); }
+.content-section { padding-block: clamp(6rem, 12vw, 11rem); border-top: 1px solid var(--color-line); }
+.section-index { display: flex; flex-direction: column; gap: 0.75rem; color: var(--color-muted); font: 0.68rem/1.4 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; }
+.section-index span:first-child { color: var(--color-accent); }
+
+.page-intro { min-height: 68vh; padding-block: clamp(6rem, 13vw, 11rem); }
+.page-intro h1 { max-width: 14ch; margin-top: 1.5rem; font-size: clamp(3rem, 8vw, 7.5rem); line-height: 0.95; letter-spacing: -0.065em; }
+.page-intro .lede { max-width: 42rem; margin: 2.5rem 0 0 auto; }
+.all-projects { display: grid; gap: clamp(6rem, 11vw, 10rem); padding-bottom: clamp(7rem, 12vw, 12rem); }
+.story-grid { display: grid; grid-template-columns: 3fr 2fr; gap: clamp(3rem, 8vw, 9rem); padding-bottom: 9rem; }
+.story-lead { font-size: clamp(1.7rem, 3.2vw, 3.2rem); line-height: 1.2; letter-spacing: -0.035em; }
+.story-side { display: grid; align-content: start; gap: 3rem; color: var(--color-muted); }
+.story-side ol { display: grid; gap: 0; list-style: none; counter-reset: principle; }
+.story-side li { padding: 1.1rem 0; border-top: 1px solid var(--color-line); counter-increment: principle; }
+.story-side li::before { margin-right: 1rem; color: var(--color-accent); font: 0.7rem var(--font-mono); content: '0' counter(principle); }
+
+.project-detail { padding-block: 5rem 10rem; }
+.project-detail-hero { display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; align-items: end; }
+.project-detail-hero .back-link { grid-column: 1 / -1; margin-bottom: 5rem; }
+.project-detail-hero h1 { grid-column: 1 / -1; font-size: clamp(4rem, 12vw, 10rem); line-height: 0.85; letter-spacing: -0.075em; }
+.project-detail-hero .lede { grid-column: 2; margin-top: 1.5rem; }
+.project-detail-hero .tag-list { grid-column: 2; }
+.project-detail-image { width: 100%; max-height: 78vh; margin-top: 5rem; border: 1px solid var(--color-line); background: var(--color-surface); object-fit: contain; }
+.case-study-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; padding-top: 6rem; }
+.case-study-grid aside { display: flex; flex-direction: column; gap: 0.5rem; font: 0.72rem var(--font-mono); text-transform: uppercase; }
+.case-study-grid aside span { color: var(--color-muted); }
+.case-study-copy { display: grid; gap: 5rem; }
+.case-study-copy h2 { max-width: 26ch; margin-top: 1rem; font-size: clamp(1.5rem, 3vw, 2.7rem); line-height: 1.25; letter-spacing: -0.035em; }
