@@ -46,3 +46,16 @@ test('reduced motion collapses decorative transitions', async ({ page }) => {
   const duration = await page.locator('.project-image img').first().evaluate((element) => getComputedStyle(element).transitionDuration)
   expect(Number.parseFloat(duration)).toBeLessThanOrEqual(0.00001)
 })
+
+test('browser Back restores visible project cards', async ({ page }) => {
+  await page.goto(`${base}projects`)
+  const firstCard = page.locator('.project-card').first()
+  await firstCard.scrollIntoViewIfNeeded()
+  await expect.poll(() => firstCard.evaluate((element) => getComputedStyle(element).opacity)).toBe('1')
+  await firstCard.locator('.project-image').click()
+  await expect(page).toHaveURL(/\/projects\/everysync$/)
+  await page.goBack()
+  await expect(page).toHaveURL(/\/projects$/)
+  await firstCard.scrollIntoViewIfNeeded()
+  await expect.poll(() => firstCard.evaluate((element) => getComputedStyle(element).opacity)).toBe('1')
+})

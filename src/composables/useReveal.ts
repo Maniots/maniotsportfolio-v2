@@ -1,8 +1,7 @@
-export function revealOnScroll(root: ParentNode = document) {
-  const elements = [...root.querySelectorAll<HTMLElement>('[data-reveal]')]
+export function observeRevealElement(element: HTMLElement) {
   const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
   if (reducedMotion || !window.IntersectionObserver) {
-    elements.forEach((element) => { element.dataset.revealed = 'true' })
+    element.dataset.revealed = 'true'
     return () => undefined
   }
 
@@ -14,6 +13,11 @@ export function revealOnScroll(root: ParentNode = document) {
       observer.unobserve(element)
     }
   }, { threshold: 0.12 })
-  elements.forEach((element) => observer.observe(element))
+  observer.observe(element)
   return () => observer.disconnect()
+}
+
+export function revealOnScroll(root: ParentNode = document) {
+  const cleanups = [...root.querySelectorAll<HTMLElement>('[data-reveal]')].map(observeRevealElement)
+  return () => cleanups.forEach((cleanup) => cleanup())
 }

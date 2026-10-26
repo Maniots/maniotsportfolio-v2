@@ -7,7 +7,7 @@ const { locale, t } = useLocale()
 </script>
 
 <template>
-  <article class="project-card" data-reveal>
+  <article v-reveal class="project-card" data-reveal>
     <RouterLink class="project-image" :to="`/projects/${project.slug}`" :aria-label="`${t('action.caseStudy')}: ${project.title}`">
       <img :src="project.cover" :alt="project.coverAlt[locale]" width="960" height="600" loading="lazy">
       <span class="project-number">{{ String(index + 1).padStart(2, '0') }}</span>
