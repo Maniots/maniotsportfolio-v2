@@ -1,14 +1,17 @@
 :root {
-  --color-bg: #0c0b0f;
+  --color-bg: #0b0a0d;
   --color-surface: #151219;
-  --color-text: #f4f0e8;
-  --color-muted: #a9a2ae;
-  --color-line: #2d2733;
-  --color-accent: #a66cff;
-  --color-accent-soft: #d5b9ff;
-  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+  --color-surface-raised: #1d1822;
+  --color-text: #f5f0e8;
+  --color-muted: #aba4af;
+  --color-line: #302936;
+  --color-accent: #a875ff;
+  --color-accent-strong: #8b4df0;
+  --color-accent-soft: #dac2ff;
+  --font-sans: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --container: 76rem;
   --gutter: clamp(1.25rem, 4vw, 4rem);
   --radius: 0.35rem;
+  --header-height: 5.5rem;
 }

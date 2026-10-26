@@ -1,34 +1,21 @@
 @import './tokens.css';
 @import './reset.css';
+@import './layout.css';
+@import './components.css';
+@import './motion.css';
+@import './responsive.css';
 
 body {
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.site-header, .page-shell {
-  width: min(100%, var(--container));
-  margin-inline: auto;
-  padding-inline: var(--gutter);
-}
-
-.site-header { display: flex; align-items: center; justify-content: space-between; min-height: 5rem; }
-.site-header nav { display: flex; gap: 1.5rem; }
-.site-header a { text-decoration: none; }
-.wordmark { font-size: 1.25rem; font-weight: 800; }
-.wordmark span, h1 span { color: var(--color-accent); }
-.page-shell { min-height: calc(100vh - 5rem); padding-block: clamp(5rem, 12vw, 10rem); }
-.page-shell h1 { max-width: 12ch; font-size: clamp(3.5rem, 10vw, 8.5rem); line-height: 0.92; letter-spacing: -0.07em; }
-.eyebrow { color: var(--color-accent-soft); font: 0.75rem/1 var(--font-mono); letter-spacing: 0.16em; text-transform: uppercase; }
-.skip-link { position: fixed; z-index: 99; top: 0; left: 1rem; padding: 0.75rem 1rem; background: var(--color-text); color: var(--color-bg); transform: translateY(-110%); }
-.skip-link:focus { transform: translateY(0); }
+a { text-underline-offset: 0.2em; }
+::selection { background: var(--color-accent); color: var(--color-bg); }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
-.page-enter-active, .page-leave-active { transition: opacity 180ms ease, transform 180ms ease; }
-.page-enter-from { opacity: 0; transform: translateY(0.5rem); }
-.page-leave-to { opacity: 0; }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
-}
+[tabindex="-1"]:focus { outline: none; }
+.skip-link { position: fixed; z-index: 110; top: 0; left: 1rem; padding: 0.75rem 1rem; background: var(--color-text); color: var(--color-bg); transform: translateY(-110%); }
+.skip-link:focus { transform: translateY(0); }

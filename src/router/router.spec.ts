@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { routes } from './index'
+import { router, routes } from './index'
 
 describe('portfolio routes', () => {
   it('declares every public route and the fallback', () => {
@@ -15,5 +15,18 @@ describe('portfolio routes', () => {
 
   it('names the dynamic project route', () => {
     expect(routes.find((route) => route.path === '/projects/:slug')?.name).toBe('project-detail')
+  })
+
+  it('loads every lazy route component', async () => {
+    for (const route of routes) {
+      expect(typeof route.component).toBe('function')
+      await (route.component as () => Promise<unknown>)()
+    }
+  })
+
+  it('runs navigation effects after a route change', async () => {
+    await router.push('/projects')
+    await router.isReady()
+    expect(document.title).toContain('Work')
   })
 })
