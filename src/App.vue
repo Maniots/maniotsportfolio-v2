@@ -3,14 +3,14 @@
   <SiteHeader />
   <main id="main-content">
     <RouterView v-slot="{ Component }">
-      <Transition name="page" mode="out-in"><component :is="Component" /></Transition>
+      <Transition name="page" mode="out-in"><component :is="Component" @vue:mounted="startReveal" /></Transition>
     </RouterView>
   </main>
   <SiteFooter />
 </template>
 
 <script setup lang="ts">
-import { nextTick, onBeforeUnmount, watch } from 'vue'
+import { onBeforeUnmount, watch } from 'vue'
 import SiteFooter from '@/components/SiteFooter.vue'
 import SiteHeader from '@/components/SiteHeader.vue'
 import { useLocale } from '@/composables/useLocale'
@@ -21,10 +21,9 @@ import { router } from '@/router'
 const { locale } = useLocale()
 watch(locale, () => applyRouteMeta(router.currentRoute.value))
 let stopReveal: () => void = () => undefined
-watch(() => router.currentRoute.value.fullPath, async () => {
-  await nextTick()
+function startReveal() {
   stopReveal()
   stopReveal = revealOnScroll()
-}, { immediate: true })
+}
 onBeforeUnmount(() => stopReveal())
 </script>
